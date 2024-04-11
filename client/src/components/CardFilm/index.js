@@ -98,7 +98,7 @@ export const CardFilm = ({film, onCardSelect, isPreviewMode}) => {
                     )}
             </Box>
             <CardInfo>
-                <Typography variant="h6" gutterBottom component="div">
+                <Typography variant="h5" gutterBottom component="div">
                     {title}
                 </Typography>
                 <Box sx={{ display: 'flex',
