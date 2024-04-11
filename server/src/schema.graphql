@@ -1,6 +1,23 @@
 type Query {
-    films(page: Int): Films
+    filmsByPopularity(page: Int): Films
+    filmsByFilter(filter: FilmsFilterInput): Films
     filmsById(ids: [Int]): [Film]
+    genres: [Genre]
+}
+
+input FilmsFilterInput {
+    page: Int,
+    sortBy: String,
+    sortDirection: SORT_DIRECTION,
+    includeAdult: Boolean,
+    year: Int
+    primaryReleaseYear: Int
+    genre: Int
+}
+
+enum SORT_DIRECTION {
+    desc,
+    asc
 }
 
 type Films {
