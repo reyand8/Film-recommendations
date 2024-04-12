@@ -10,8 +10,8 @@ input FilmsFilterInput {
     sortBy: String,
     sortDirection: SORT_DIRECTION,
     includeAdult: Boolean,
-    year: Int
-    primaryReleaseYear: Int
+    releaseDateGte: String
+    releaseDateLte: String
     genre: Int
 }
 
