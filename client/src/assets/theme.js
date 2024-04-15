@@ -2,6 +2,16 @@ import {createTheme} from "@mui/material";
 
 
 const theme = createTheme({
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 900,
+            lg: 1200,
+            xl: 1536,
+            xxl: 2160,
+        },
+    },
     palette: {
         mode: 'light',
         primary: {
@@ -18,7 +28,8 @@ const theme = createTheme({
         },
         background: {
             default: '#f3e3e3',
-            paper: '#fff'
+            paper: '#fff',
+            lightTheme:'#e75e8e',
         },
         text: {
             primary: 'rgba(0,0,0,0.87)',
@@ -46,17 +57,28 @@ const theme = createTheme({
         fontWeightLight: 300,
         h6: {
             fontSize: 14,
+            fontWeight: 700,
         },
         h5: {
             fontSize: 19,
+            fontWeight: 700,
         },
         h4: {
-            fontSize: 21,
+            fontSize: 20,
+            fontWeight: 700,
+        },
+        h3: {
+            fontSize: 34,
+            fontWeight: 700,
         },
         subtitle2: {
             fontWeight: 600,
             lineHeight: 1.21,
             fontSize: 14,
+        },
+        body1: {
+            fontSize: 17,
+            fontWeight: 500,
         },
     },
 });
