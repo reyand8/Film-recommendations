@@ -41,10 +41,17 @@ type Film {
     popularity: Float
     voteCount: Int
     video: Boolean
+    runtime: Int
     voteAverage: Float
+    production: [Production]
 }
 
 type Genre {
     id: Int!
+    name: String
+}
+
+type Production {
+    iso_3166_1: String
     name: String
 }
