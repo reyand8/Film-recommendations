@@ -113,7 +113,8 @@ const Navigation = () => {
             <Box sx={{ flexGrow:1 }}>
                 <AppBar position="static">
                     <Toolbar>
-                        <Hidden only={['lg', 'xl']}>
+                        <Box sx={{display: {
+                            xs: 'block', lg: 'none', xl: 'none', xxl: 'none'} }} >
                             <IconButton
                                 onClick={() => setDrawerOpen(true)}
                                 size="large"
@@ -124,7 +125,7 @@ const Navigation = () => {
                             >
                                 <MenuIcon />
                             </IconButton>
-                        </Hidden>
+                        </Box>
                         <Link component={RouterLink} to="/" sx={{ flexGrow: 1 }}>
                             <Typography variant="h4" component="div" sx={{
                                 color:  theme.palette.primary.contrastText,
@@ -133,15 +134,18 @@ const Navigation = () => {
                                 <FormattedMessage id="navigation.home"/>
                             </Typography>
                         </Link>
-                        <Hidden only={['xs', 'sm', 'md']}>
-                            <Button
-                                startIcon={<LanguageIcon sx={{ my: 2, color: theme.palette.primary.contrastText }}/>}
-                                size="large"
-                                aria-controls={open ? 'fade-menu' : undefined}
-                                aria-expanded={open ? 'true' : undefined}
-                                onClick={handleClick}>
+                        <Box sx={{display: {
+                                xs: 'none', sm: 'none',
+                                md: 'none', lg: 'flex',
+                                xl: 'flex', xxl: 'flex'} }}>
+                            <Button component={RouterLink}
+                                    to='genres'
+                                    size="large"
+                                    sx={{ my: 2, pt: 1.5, color:
+                                        theme.palette.primary.contrastText, display: 'block',
+                                    }}>
+                                <FormattedMessage id="navigation.genres" />
                             </Button>
-                            {languageMenu()}
                             <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
                                 <Button component={RouterLink}
                                         to='settings'
@@ -152,12 +156,19 @@ const Navigation = () => {
                                             color:
                                             theme.palette.primary.contrastText,
                                             display: 'block',
-
                                 }}>
                                     <FormattedMessage id="navigation.settings" />
                                 </Button>
                             </Box>
-                        </Hidden>
+                            <Button
+                                startIcon={<LanguageIcon sx={{ my: 2, color: theme.palette.primary.contrastText }}/>}
+                                size="large"
+                                aria-controls={open ? 'fade-menu' : undefined}
+                                aria-expanded={open ? 'true' : undefined}
+                                onClick={handleClick}>
+                            </Button>
+                            {languageMenu()}
+                        </Box>
                     </Toolbar>
                 </AppBar>
             </Box>
