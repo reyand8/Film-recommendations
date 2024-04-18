@@ -10,3 +10,7 @@ a {
 .icon {
   width: 44px;
 }
+
+.box::-webkit-scrollbar {
+  display: none;
+}
