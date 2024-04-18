@@ -19,7 +19,7 @@ export const SortDirectionField = () => {
                 <FormattedMessage id="filters.sort_direction">
                     {placeholder =>
                         <FormControl>
-                            <FormLabel sx={{mb:1, mt: {xs: 0, md: 2}}} id="sort_direction">{placeholder}</FormLabel>
+                            <FormLabel sx={{mb:1, mt: {xs: 0, md: 1}}} id="sort_direction">{placeholder}</FormLabel>
                             <RadioGroup
                                 row
                                 name="sort_directionp"
