@@ -1,4 +1,3 @@
-
 class Genre {
     constructor(genre) {
         this.id = genre.id;
