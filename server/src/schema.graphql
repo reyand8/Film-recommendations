@@ -1,6 +1,8 @@
 type Query {
     filmsByPopularity(page: Int): Films
     filmsByFilter(filter: FilmsFilterInput): Films
+    filmsBySearchQuery(search: FilmsSearchInput): Films
+    filmsByGenre(filter: FilmsFilterInput): Films
     filmsById(ids: [Int]): [Film]
     genres: [Genre]
 }
@@ -10,9 +12,14 @@ input FilmsFilterInput {
     sortBy: String,
     sortDirection: SORT_DIRECTION,
     includeAdult: Boolean,
-    releaseDateGte: String
-    releaseDateLte: String
+    releaseDateGte: String,
+    releaseDateLte: String,
     genre: Int
+}
+
+input FilmsSearchInput {
+    query: String,
+    page: Int,
 }
 
 enum SORT_DIRECTION {
