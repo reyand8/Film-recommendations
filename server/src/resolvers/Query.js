@@ -1,16 +1,22 @@
-const { getDetails, discoverFilm, getPopular} = require('../modules/films');
+const { getDetails, discoverFilm, getPopular, getFilmsByGenre, getFilmsBySearchQuery} = require('../modules/films');
 const {Film} = require("../modules/films/entities/Film");
 const {getList} = require("../modules/genres");
 
 
 async function filmsByFilter(parent, args, {locale}) {
-    const data = await discoverFilm(args.filter, locale);
-    return data
+    return await discoverFilm(args.filter, locale);
+}
+
+async function filmsBySearchQuery(parent, args, {locale}) {
+    return await getFilmsBySearchQuery(args.search, locale);
 }
 
 async function filmsByPopularity(parent, args, { locale }) {
-    const data = await getPopular(args.page, locale);
-    return data
+    return await getPopular(args.page, locale);
+}
+
+async function filmsByGenre(parent, args, {locale}) {
+    return await getFilmsByGenre(args.filter, locale);
 }
 
 async function filmsById(parent, {ids}, {locale}) {
@@ -25,7 +31,9 @@ async function genres(_, {}, {locale}) {
 
 module.exports = {
     filmsByFilter,
+    filmsBySearchQuery,
     filmsByPopularity,
     filmsById,
-    genres
+    filmsByGenre,
+    genres,
 }
