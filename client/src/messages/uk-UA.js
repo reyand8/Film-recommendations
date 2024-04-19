@@ -7,6 +7,7 @@ export default {
             'settings': 'Налаштування',
             'genres': 'Жанри',
             'language': 'Мова',
+            'search': 'Пошук',
         },
         'no_selected_films': 'Немає вибраних фільмів',
         'specify_list_name': 'Вкажіть імʼя списку',

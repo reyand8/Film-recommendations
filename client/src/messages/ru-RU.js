@@ -7,6 +7,7 @@ export default {
             'settings': 'Настройки',
             'genres': 'Жанры',
             'language': 'Язык',
+            'search': 'Поиск',
         },
         'no_selected_films': 'Нет выбранных фильмов',
         'specify_list_name': 'Укажите имя списка',

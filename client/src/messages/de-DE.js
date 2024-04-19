@@ -7,6 +7,7 @@ export default {
             'settings': 'Einstellungen',
             'genres': 'Genres',
             'language': 'Sprache',
+            'search': 'Suchen',
         },
         'no_selected_films': 'Keine Filme ausgewählt',
         'specify_list_name': 'Geben Sie einen Listennamen an',
