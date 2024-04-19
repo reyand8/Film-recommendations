@@ -19,8 +19,8 @@ const CardInfo = styled(CardContent)(({theme}) => ({
 }));
 
 
-export const CardFilmSearch = ({film}) => {
-    const {id, title, image, releaseDate, adult} = film
+const CardFilmSearch = ({film}) => {
+    const {id, title, image, releaseDate, adult } = film
 
     return (
         <Link to={`/film/${id}`} key={id}>
@@ -59,3 +59,5 @@ CardFilmSearch.propTypes = {
     }).isRequired,
     onCardSelect: PropTypes.func
 }
+
+export default CardFilmSearch
