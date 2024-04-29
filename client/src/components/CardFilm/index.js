@@ -73,7 +73,13 @@ export const CardFilm = ({film, onCardSelect, isPreviewMode}) => {
             </Box>
             <Link to={`/film/${id}`} key={id}>
                 <CardInfo>
-                    <Typography variant="h5" gutterBottom component="div">
+                    <Typography variant="h5" gutterBottom component="div" sx={{
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        display: '-webkit-box',
+                        WebkitLineClamp: '2',
+                        WebkitBoxOrient: 'vertical',
+                    }}>
                         {title}
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'row',
