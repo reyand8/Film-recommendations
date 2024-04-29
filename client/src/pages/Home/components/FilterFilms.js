@@ -3,7 +3,6 @@ import Paper from '@mui/material/Paper';
 import {useQuery} from '@apollo/client';
 
 import {CardFilm} from '../../../components';
-import {useFilms} from '../../../hooks/useFilms';
 import DataError from '../../../components/DataError';
 import {FILMS_BY_FILTER_QUERY} from '../../../quieries/queries';
 import Loading from '../../../components/Loading';

@@ -265,7 +265,8 @@ const Navigation = () => {
                                             </Typography>
                                             : <Box sx={{ flexGrow: 1, mb: 8, p: 2 }}>
                                                 {data && (
-                                                    <Grid sx={{display: 'flex', flexDirection: 'column'}} container spacing={2}>
+                                                    <Grid sx={{display: 'flex', flexDirection: 'column'}}
+                                                          container spacing={2}>
                                                         {data.filmsBySearchQuery.results.map((film) => (
                                                             <Grid key={film.id} item xs={12} sm={6} md={4} lg={10}>
                                                                 <CardFilmSearch film={film}/>
@@ -276,7 +277,10 @@ const Navigation = () => {
                                                             justifyContent: 'center',
                                                             marginTop: '20px'}} >
                                                             <RouterLink to={`search?title=${searchValue}`}>
-                                                                <Button onClick={handleNavSearch} sx={{width: '180px'}} variant="contained">See more </Button>
+                                                                <Button onClick={handleNavSearch} sx={{width: '180px'}}
+                                                                        variant="contained">
+                                                                    See more
+                                                                </Button>
                                                             </RouterLink>
                                                         </Box>
                                                     </Grid>
