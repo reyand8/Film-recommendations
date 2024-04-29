@@ -1,15 +1,15 @@
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import {Box, CardContent, Typography} from "@mui/material";
-import MenuItem from "@mui/material/MenuItem";
-import {FormattedMessage} from "react-intl";
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import {Box, CardContent, Typography} from '@mui/material';
+import MenuItem from '@mui/material/MenuItem';
+import {FormattedMessage} from 'react-intl';
 
-import PropTypes from "prop-types";
-import CardMenu from "../CardMenu";
+import PropTypes from 'prop-types';
+import CardMenu from '../CardMenu';
 
 
 const CardFilmSelected = ({film, onCardDelete}) => {
-    const {title, releaseDate, image} = film
+    const {title, releaseDate, image} = film;
     return (
         <Card sx={{ display: 'flex', minHeight: '160px'}}>
             <CardMedia
@@ -32,8 +32,8 @@ const CardFilmSelected = ({film, onCardDelete}) => {
                 </CardMenu>
             </Box>
         </Card>
-    )
-}
+    );
+};
 
 
 CardFilmSelected.propTypes = {
@@ -43,12 +43,12 @@ CardFilmSelected.propTypes = {
         releaseDate: PropTypes.string,
         genres: PropTypes.arrayOf(PropTypes.shape({
             id: PropTypes.number,
-            name: PropTypes.string
+            name: PropTypes.string,
         })),
-        runtime: PropTypes.number
+        runtime: PropTypes.number,
     }).isRequired,
-    onCardDelete: PropTypes.func
-}
+    onCardDelete: PropTypes.func,
+};
 
 
-export default CardFilmSelected
+export default CardFilmSelected;

@@ -1,11 +1,11 @@
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes} from 'react-router-dom';
 
-import {ROUTES} from "../../routes";
-import {Home, Recommend, Settings} from "../../pages";
-import SingleFilm from "../../pages/SingleFilm";
-import Genres from "../../pages/Genres";
-import FilmsByGenre from "../../pages/FilmsByGenre";
-import Search from "../../pages/Search";
+import {ROUTES} from '../../routes';
+import {Home, Recommend, Settings} from '../../pages';
+import SingleFilm from '../../pages/SingleFilm';
+import Genres from '../../pages/Genres';
+import FilmsByGenre from '../../pages/FilmsByGenre';
+import Search from '../../pages/Search';
 
 
 const AppRoutes = () => (

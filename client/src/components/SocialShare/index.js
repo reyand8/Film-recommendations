@@ -4,8 +4,8 @@ import {
     FacebookShareButton,
     FacebookIcon,
     TwitterShareButton,
-    TwitterIcon
-} from "react-share";
+    TwitterIcon,
+} from 'react-share';
 
 import { SOCIAL_BUTTON_SIZE } from '../../const';
 
@@ -22,7 +22,7 @@ const SocialShare = ({ url, title}) => (
 
 SocialShare.propTypes = {
     url: PropTypes.string,
-    title: PropTypes.string
-}
+    title: PropTypes.string,
+};
 
 export default SocialShare;

@@ -13,5 +13,5 @@ export {
     ReleaseDateFrom,
     ReleaseDateTo,
     SubmitField,
-    GenreField
-}
+    GenreField,
+};

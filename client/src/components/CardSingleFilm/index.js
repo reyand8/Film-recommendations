@@ -1,27 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import {Box, Grid, Typography} from "@mui/material";
-import CircularProgress from "@mui/material/CircularProgress";
-import theme from "../../assets/theme";
-import CardMedia from "@mui/material/CardMedia";
-import Paper from "@mui/material/Paper";
+import {Box, Grid, Typography} from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
+import theme from '../../assets/theme';
+import CardMedia from '@mui/material/CardMedia';
+import Paper from '@mui/material/Paper';
 
-import adultIcon from "../../assets/img/adult.svg";
-import {changeColor, getVoteCicle} from "../../common";
-import {FormattedMessage} from "react-intl";
+import adultIcon from '../../assets/img/adult.svg';
+import {changeColor, getVoteCicle} from '../../common';
+import {FormattedMessage} from 'react-intl';
 
 
 
 const CardSingleFilm  = ({film}) => {
-    const {title, overview, runtime, genres, adult, image, production, releaseDate, voteAverage} = film
-    const voteCicle = (voteAverage * 10)
+    const {title, overview, runtime, genres, adult, image, production, releaseDate, voteAverage} = film;
+    const voteCicle = (voteAverage * 10);
 
     return (
         <Box sx={{
             flexGrow: 1, my: 5, display: 'flex',
             flexDirection: 'column', alignItems: 'center',
-            height: {xxl: '100%'}
+            height: {xxl: '100%'},
         }}>
             <Box position="relative" >
                 <Box position="absolute" right={0} top={4} display="inline-block" sx={{width:65}}>
@@ -57,7 +57,7 @@ const CardSingleFilm  = ({film}) => {
                             </Typography>
                             <Typography ml={3}>
                                 {!adult ? (
-                                    <img className='icon' src={adultIcon} alt=""/>
+                                    <img className="icon" src={adultIcon} alt=""/>
                                 ): ''}
                             </Typography>
                         </Box>
@@ -66,7 +66,7 @@ const CardSingleFilm  = ({film}) => {
                                 <Paper sx={{
                                     maxWidth: '290px',
                                     background: theme.palette.background.lightTheme,
-                                    color: theme.palette.primary.contrastText
+                                    color: theme.palette.primary.contrastText,
                                 }}>
                                     <Typography variant="body1" >
                                         Country: {name}
@@ -82,7 +82,7 @@ const CardSingleFilm  = ({film}) => {
                                 <FormattedMessage id="singlePage.release_date"/>: {releaseDate}
                             </Typography>
                         </Box>
-                        <Box sx={{maxWidth:'920px', mt:4,}}>
+                        <Box sx={{maxWidth:'920px', mt:4}}>
                             <Typography sx={{minWidth: {xs: '245px'}}}  variant="body1"
                                         component="div" color="textSecondary">
                                 {overview}
@@ -104,8 +104,8 @@ const CardSingleFilm  = ({film}) => {
                 </Grid>
             </Paper>
         </Box>
-    )
-}
+    );
+};
 
 CardSingleFilm.propTypes = {
     film: PropTypes.shape({
@@ -119,7 +119,7 @@ CardSingleFilm.propTypes = {
         adult: PropTypes.bool,
         voteAverage: PropTypes.number,
     }).isRequired,
-    onCardSelect: PropTypes.func
-}
+    onCardSelect: PropTypes.func,
+};
 
-export default CardSingleFilm
+export default CardSingleFilm;

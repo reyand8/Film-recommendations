@@ -5,5 +5,5 @@ export const ROUTES = {
     FILMS_BY_GENRE: '/genre/:id',
     SEARCH: '/search',
     SETTINGS: '/settings',
-    RECOMMEND: '/recommend'
-}
+    RECOMMEND: '/recommend',
+};

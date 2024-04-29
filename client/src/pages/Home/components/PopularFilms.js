@@ -1,25 +1,25 @@
-import {useState} from "react";
-import {Box, Grid, Pagination} from "@mui/material";
-import Paper from "@mui/material/Paper"
-import {useQuery} from "@apollo/client";
+import {useState} from 'react';
+import {Box, Grid, Pagination} from '@mui/material';
+import Paper from '@mui/material/Paper';
+import {useQuery} from '@apollo/client';
 
-import {CardFilm, SelectedFilmsSection} from "../../../components";
-import {useFilms} from "../../../hooks/useFilms";
-import Loading from "../../../components/Loading";
-import DataError from "../../../components/DataError";
-import {FILMS_BY_POPULARITY_QUERY} from "../../../quieries/queries";
+import {CardFilm, SelectedFilmsSection} from '../../../components';
+import {useFilms} from '../../../hooks/useFilms';
+import Loading from '../../../components/Loading';
+import DataError from '../../../components/DataError';
+import {FILMS_BY_POPULARITY_QUERY} from '../../../quieries/queries';
 
 
 const PopularFilms = () => {
     const { selectedFilms, selectFilm, deleteFilm } = useFilms();
     const [page, setPage] = useState(1);
-    const {loading, error, data }  = useQuery(FILMS_BY_POPULARITY_QUERY, {variables: {page}})
+    const {loading, error, data }  = useQuery(FILMS_BY_POPULARITY_QUERY, {variables: {page}});
 
     const paginationHandler = (event, page) => {
-        setPage(page)
-    }
+        setPage(page);
+    };
 
-    const pagesCount = data?.filmsByPopularity?.totalPages <= 500 ? data?.filmsByPopularity?.totalPages : 500
+    const pagesCount = data?.filmsByPopularity?.totalPages <= 500 ? data?.filmsByPopularity?.totalPages : 500;
 
     if (error) {
         return <DataError/>;
@@ -57,7 +57,7 @@ const PopularFilms = () => {
                 </Box>
             )}
         </>
-    )
-}
+    );
+};
 
-export default PopularFilms
+export default PopularFilms;

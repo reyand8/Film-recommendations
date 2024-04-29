@@ -26,5 +26,5 @@ export const SORT_OPTIONS = [
 
 export const SORT_DIRECTION = {
     DESC: 'desc',
-    ASC: 'asc'
+    ASC: 'asc',
 };

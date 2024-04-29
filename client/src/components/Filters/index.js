@@ -4,4 +4,4 @@ import { Filters } from './filters';
 export {
     SortMenu,
     Filters,
-}
+};

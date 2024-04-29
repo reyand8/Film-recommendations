@@ -1,30 +1,30 @@
-import React, {useCallback, useContext, useState} from "react";
-import { Link as RouterLink } from "react-router-dom";
-import {FormattedMessage} from "react-intl";
-import {useQuery} from "@apollo/client";
+import React, {useCallback, useContext, useState} from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import {FormattedMessage} from 'react-intl';
+import {useQuery} from '@apollo/client';
 
 import Fade from '@mui/material/Fade';
 import LanguageIcon from '@mui/icons-material/Language';
-import Button from '@mui/material/Button'
+import Button from '@mui/material/Button';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {
     alpha, AppBar, Box, Drawer, Grid, IconButton, Link,
     List, Toolbar, Typography,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
-import InputBase from "@mui/material/InputBase";
-import {styled} from "@mui/material/styles";
+import InputBase from '@mui/material/InputBase';
+import {styled} from '@mui/material/styles';
 
-import {AppContext} from "../../providers/appContext";
-import {LOCALES} from "../../const";
-import theme from '../../assets/theme'
-import CardFilmSearch from "../CardFilmSearch";
-import {FILMS_BY_SEARCH_QUERY} from "../../quieries/queries";
-import Loading from "../Loading";
-import DataError from "../DataError";
+import {AppContext} from '../../providers/appContext';
+import {LOCALES} from '../../const';
+import theme from '../../assets/theme';
+import CardFilmSearch from '../CardFilmSearch';
+import {FILMS_BY_SEARCH_QUERY} from '../../quieries/queries';
+import Loading from '../Loading';
+import DataError from '../DataError';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -89,48 +89,48 @@ const SearchResultBox = styled(Box)(({ theme }) => ({
 const Navigation = () => {
     const [isDrawerOpen, setDrawerOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl)
+    const open = Boolean(anchorEl);
 
     const { state, dispatch } = useContext(AppContext);
 
     const [searchValue, setSearchValue] = useState('');
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(1);
 
     const search = {
         page: page,
         query: searchValue,
-    }
+    };
 
     const {loading, error, data } = useQuery(FILMS_BY_SEARCH_QUERY,
-        {variables: {search}, skip: !searchValue})
+        {variables: {search}, skip: !searchValue});
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
 
     const handleNavSearch = () => {
-        setSearchValue('')
-    }
+        setSearchValue('');
+    };
 
     const handleClose = () => {
         setAnchorEl(null);
     };
 
     const handleSearch = (value) => {
-        setSearchValue(value)
-    }
+        setSearchValue(value);
+    };
 
     const handleLanguageClick = (language) => {
-        setLanguage(language)
-        handleClose()
-    }
+        setLanguage(language);
+        handleClose();
+    };
 
     const setLanguage = useCallback((locale) => {
         dispatch({
             type: 'setLocale',
-            locale
-        })
-    }, [])
+            locale,
+        });
+    }, []);
 
     if (error) {
         return <DataError/>;
@@ -174,12 +174,12 @@ const Navigation = () => {
                     DE
                 </MenuItem>
             </Menu>
-    )
+    );
 
     const burgerList = () => (
         <Box sx={{ width: 190, ml: 3 }} role="presentation">
             <List sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <Link component={RouterLink} to='settings'>
+                <Link component={RouterLink} to="settings">
                     <Button size="large"
                             startIcon={<SettingsIcon/>}
                             onClick={() => setDrawerOpen(false)}>
@@ -197,14 +197,14 @@ const Navigation = () => {
                     </Button>
                     {languageMenu()}
                 </>
-                <Link component={RouterLink} to='search'>
+                <Link component={RouterLink} to="search">
                     <Button size="large"
                             startIcon={<SearchIcon/>}
                             onClick={() => setDrawerOpen(false)}>
                         <FormattedMessage id="navigation.search"/>
                     </Button>
                 </Link>
-                <Link component={RouterLink} to='genres'>
+                <Link component={RouterLink} to="genres">
                     <Button size="large"
                             onClick={() => setDrawerOpen(false)}>
                         <FormattedMessage id="navigation.genres"/>
@@ -212,7 +212,7 @@ const Navigation = () => {
                 </Link>
             </List>
         </Box>
-    )
+    );
 
     return (
         <>
@@ -235,7 +235,7 @@ const Navigation = () => {
                         <Link component={RouterLink} to="/" sx={{ flexGrow: 1 }}>
                             <Typography variant="h4" component="div" sx={{
                                 color:  theme.palette.primary.contrastText,
-                                flexGrow: 1
+                                flexGrow: 1,
                             }}>
                                 <FormattedMessage id="navigation.home"/>
                             </Typography>
@@ -258,7 +258,7 @@ const Navigation = () => {
                                     />
                                 </Search>
                                 {searchValue && (
-                                    <SearchResultBox className='box' sx={{boxShadow: 3}}>
+                                    <SearchResultBox className="box" sx={{boxShadow: 3}}>
                                         {loading ? <Loading/> : !data?.filmsBySearchQuery.totalResults ?
                                             <Typography variant="subtitel2" sx={{color: theme.palette.text.primary}}>
                                                 No results
@@ -287,7 +287,7 @@ const Navigation = () => {
                                 )}
                             </Box>
                             <Button component={RouterLink}
-                                    to='genres'
+                                    to="genres"
                                     size="large"
                                     sx={{ my: 2, pt: 1.5, color:
                                         theme.palette.primary.contrastText, display: 'block',
@@ -296,7 +296,7 @@ const Navigation = () => {
                             </Button>
                             <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
                                 <Button component={RouterLink}
-                                        to='settings'
+                                        to="settings"
                                         size="large"
                                         sx={{
                                             my: 2,
@@ -321,13 +321,13 @@ const Navigation = () => {
                 </AppBar>
             </Box>
             <Drawer
-                anchor='left'
+                anchor="left"
                 open={isDrawerOpen}
                 onClose={() => setDrawerOpen(false)}>
                 {burgerList()}
             </Drawer>
         </>
-    )
-}
+    );
+};
 
-export default Navigation
+export default Navigation;

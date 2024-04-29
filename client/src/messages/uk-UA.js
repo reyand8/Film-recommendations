@@ -30,7 +30,7 @@ export default {
                 'primary_release_date': 'Перша дата релізу',
                 'original_title': 'Оригінальна назва',
                 'vote_average': 'Середня оцінка',
-                'vote_count': 'Кількість оцінок'
+                'vote_count': 'Кількість оцінок',
             },
             sort_direction_options: {
                 asc: 'ASC',

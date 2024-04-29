@@ -1,5 +1,5 @@
-import { Field } from 'react-final-form'
-import { FormattedMessage } from "react-intl";
+import { Field } from 'react-final-form';
+import { FormattedMessage } from 'react-intl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -35,5 +35,5 @@ export const SortField = () => {
                 </FormattedMessage>
             )}
         />
-    )
-}
+    );
+};

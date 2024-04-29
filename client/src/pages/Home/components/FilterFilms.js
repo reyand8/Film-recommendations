@@ -1,27 +1,27 @@
-import {Box, Grid, Pagination} from "@mui/material";
-import Paper from "@mui/material/Paper";
-import {useQuery} from "@apollo/client";
+import {Box, Grid, Pagination} from '@mui/material';
+import Paper from '@mui/material/Paper';
+import {useQuery} from '@apollo/client';
 
-import {CardFilm} from "../../../components";
-import SelectedFilmsSection from "../../../components/SelectedFilmsSection";
-import {useFilms} from "../../../hooks/useFilms";
-import DataError from "../../../components/DataError";
-import {FILMS_BY_FILTER_QUERY} from "../../../quieries/queries";
-import Loading from "../../../components/Loading";
+import {CardFilm} from '../../../components';
+import SelectedFilmsSection from '../../../components/SelectedFilmsSection';
+import {useFilms} from '../../../hooks/useFilms';
+import DataError from '../../../components/DataError';
+import {FILMS_BY_FILTER_QUERY} from '../../../quieries/queries';
+import Loading from '../../../components/Loading';
 
 
 const FilterFilms = ({filter, setPage}) => {
     const { selectedFilms, selectFilm, deleteFilm } = useFilms();
 
     const {loading, error, data } = useQuery(FILMS_BY_FILTER_QUERY,
-        {variables: {filter}})
+        {variables: {filter}});
 
     const paginationHandler = (event, page) => {
-        event.preventDefault()
-        setPage(page)
-    }
+        event.preventDefault();
+        setPage(page);
+    };
 
-    const pagesCount = data?.filmsByFilter?.totalPages <= 500 ? data?.filmsByFilter?.totalPages : 500
+    const pagesCount = data?.filmsByFilter?.totalPages <= 500 ? data?.filmsByFilter?.totalPages : 500;
 
     if (error) {
         return <DataError/>;
@@ -59,7 +59,7 @@ const FilterFilms = ({filter, setPage}) => {
                 </Grid>
             </Grid>
         </Box>
-    )
-}
+    );
+};
 
-export default FilterFilms
+export default FilterFilms;

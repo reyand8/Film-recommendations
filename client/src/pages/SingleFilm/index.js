@@ -1,12 +1,12 @@
-import React from "react";
-import {useParams} from "react-router-dom";
-import {useQuery} from "@apollo/client";
-import {Box, Grid} from "@mui/material";
+import React from 'react';
+import {useParams} from 'react-router-dom';
+import {useQuery} from '@apollo/client';
+import {Box, Grid} from '@mui/material';
 
-import DataError from "../../components/DataError";
-import Loading from "../../components/Loading";
-import CardSingleFilm from "../../components/CardSingleFilm";
-import {FILMS_BY_ID_QUERY} from "../../quieries/queries";
+import DataError from '../../components/DataError';
+import Loading from '../../components/Loading';
+import CardSingleFilm from '../../components/CardSingleFilm';
+import {FILMS_BY_ID_QUERY} from '../../quieries/queries';
 
 
 const SingleFilm = () => {
@@ -14,9 +14,9 @@ const SingleFilm = () => {
 
     const {loading, error, data} = useQuery(FILMS_BY_ID_QUERY, {
         variables: {
-            ids: +id
-        }
-    })
+            ids: +id,
+        },
+    });
 
     if (error) {
         return <DataError/>;
@@ -36,10 +36,10 @@ const SingleFilm = () => {
                 </Box>
             )}
         </>
-    )
-}
+    );
+};
 
-export default SingleFilm
+export default SingleFilm;
 
 
 

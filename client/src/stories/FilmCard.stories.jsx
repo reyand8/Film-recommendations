@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-import {CardFilm} from "../components";
-import {films} from './stub'
+import {CardFilm} from '../components';
+import {films} from './stub';
 
 export default {
   title: 'Card/Film card',
   component: CardFilm,
 };
 
-const Template = (args) => <CardFilm {...args}/>
+const Template = (args) => <CardFilm {...args}/>;
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 
 Primary.args = {
-   film: films[0]
+   film: films[0],
 };

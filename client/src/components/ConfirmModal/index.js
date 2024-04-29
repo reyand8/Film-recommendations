@@ -1,6 +1,6 @@
 import React from 'react';
-import {useEffect, useState} from "react";
-import {FormattedMessage} from "react-intl";
+import {useEffect, useState} from 'react';
+import {FormattedMessage} from 'react-intl';
 
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
@@ -34,15 +34,15 @@ const style = {
 
 
 const ConfirmModal = ({open, url, title, onClose}) => {
-    const [openAlert, setOpenAlert] = useState(false)
+    const [openAlert, setOpenAlert] = useState(false);
 
     useEffect(() => {
-        let timer
+        let timer;
         if (openAlert) {
-            timer = setTimeout(() => { setOpenAlert(false)}, CONFIRM_TIMEOUT)
+            timer = setTimeout(() => { setOpenAlert(false);}, CONFIRM_TIMEOUT);
         }
-        return () => clearTimeout(timer)
-    }, [openAlert])
+        return () => clearTimeout(timer);
+    }, [openAlert]);
 
     return (
         <Modal
@@ -98,15 +98,15 @@ const ConfirmModal = ({open, url, title, onClose}) => {
                 ) : null}
             </Box>
         </Modal>
-    )
-}
+    );
+};
 
 
 ConfirmModal.propTypes = {
     open: PropTypes.bool,
     url: PropTypes.string,
     title: PropTypes.string,
-    onClose: PropTypes.func
-}
+    onClose: PropTypes.func,
+};
 
-export default ConfirmModal
+export default ConfirmModal;

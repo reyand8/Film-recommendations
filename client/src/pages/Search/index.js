@@ -1,19 +1,19 @@
-import React, {useEffect, useState} from "react";
-import {useSearchParams} from "react-router-dom";
-import {alpha, Box, Grid, Pagination} from "@mui/material";
-import {useQuery} from "@apollo/client";
+import React, {useEffect, useState} from 'react';
+import {useSearchParams} from 'react-router-dom';
+import {alpha, Box, Grid, Pagination} from '@mui/material';
+import {useQuery} from '@apollo/client';
 
-import Paper from "@mui/material/Paper";
-import {styled} from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
-import SearchIcon from "@mui/icons-material/Search";
+import Paper from '@mui/material/Paper';
+import {styled} from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
 
-import {FILMS_BY_SEARCH_QUERY} from "../../quieries/queries";
-import Loading from "../../components/Loading";
-import {CardFilm, SelectedFilmsSection} from "../../components";
-import {useFilms} from "../../hooks/useFilms";
-import theme from '../../assets/theme'
-import DataError from "../../components/DataError";
+import {FILMS_BY_SEARCH_QUERY} from '../../quieries/queries';
+import Loading from '../../components/Loading';
+import {CardFilm, SelectedFilmsSection} from '../../components';
+import {useFilms} from '../../hooks/useFilms';
+import theme from '../../assets/theme';
+import DataError from '../../components/DataError';
 
 
 const MainSearch = styled('div')(({ theme }) => ({
@@ -53,40 +53,40 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Search = () => {
     const [ searchParams ] = useSearchParams();
-    const searchTitle = searchParams.get('title')
-    const [searchQuery, setSearchQuery] = useState('')
-    const [page, setPage] = useState(1)
+    const searchTitle = searchParams.get('title');
+    const [searchQuery, setSearchQuery] = useState('');
+    const [page, setPage] = useState(1);
 
     const { selectedFilms, selectFilm, deleteFilm } = useFilms();
 
     useEffect(() => {
         if (searchTitle) {
-            setSearchQuery(searchTitle)
+            setSearchQuery(searchTitle);
         } else {
-            setSearchQuery('')
+            setSearchQuery('');
         }
     }, [searchTitle]);
 
     const search = {
         query: searchQuery,
         page: page,
-    }
+    };
 
     const {loading, error, data } = useQuery(FILMS_BY_SEARCH_QUERY,
-        {variables: {search}})
+        {variables: {search}});
 
-    const pagesCount = data?.filmsBySearchQuery?.totalPages <= 500 ? data?.filmsBySearchQuery?.totalPages : 500
+    const pagesCount = data?.filmsBySearchQuery?.totalPages <= 500 ? data?.filmsBySearchQuery?.totalPages : 500;
 
     const paginationHandler = (event, page) => {
-        setPage(page)
-    }
+        setPage(page);
+    };
 
     const handleSearch = (value) => {
-        setSearchQuery(value)
-    }
+        setSearchQuery(value);
+    };
 
     if (error) {
-        return <DataError/>
+        return <DataError/>;
     }
 
     return (
@@ -139,7 +139,7 @@ const Search = () => {
                 </Grid>
             </Box>
         </>
-    )
-}
+    );
+};
 
-export default Search
+export default Search;

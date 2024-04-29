@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardFilmSelected } from '../components'
+import { CardFilmSelected } from '../components';
 
 import { films } from './stub';
 
@@ -13,5 +13,5 @@ const Template = (args) => <CardFilmSelected {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    film: films[0]
+    film: films[0],
 };

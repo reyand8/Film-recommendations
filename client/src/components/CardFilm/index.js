@@ -5,13 +5,13 @@ import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import CircularProgress from '@mui/material/CircularProgress'
+import CircularProgress from '@mui/material/CircularProgress';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
-import {Box, CardContent} from "@mui/material";
+import {Box, CardContent} from '@mui/material';
 
-import adultIcon from "../../assets/img/adult.svg"
-import theme from "../../assets/theme";
-import {changeColor, getVoteCicle} from "../../common";
+import adultIcon from '../../assets/img/adult.svg';
+import theme from '../../assets/theme';
+import {changeColor, getVoteCicle} from '../../common';
 
 
 const CardInfo = styled(CardContent)(({theme}) => ({
@@ -40,15 +40,15 @@ const PlusIcon = styled(Box)(({ theme }) => ({
     '&:hover': {
         opacity: 1,
         transition: 'opacity .8s',
-    }
-}))
+    },
+}));
 
 export const CardFilm = ({film, onCardSelect, isPreviewMode}) => {
-    const {id, title, image, releaseDate, adult, voteAverage } = film
-    const voteCicle = (voteAverage * 10)
+    const {id, title, image, releaseDate, adult, voteAverage } = film;
+    const voteCicle = (voteAverage * 10);
 
     return (
-        <Card sx={{ maxWidth: 250, height: '460px', position: "relative" }}>
+        <Card sx={{ maxWidth: 250, height: '460px', position: 'relative' }}>
             <Box position="relative" >
                 <Box position="absolute" right={0} top={4} display="inline-block" sx={{width:65}}>
                     <CircularProgress
@@ -89,15 +89,15 @@ export const CardFilm = ({film, onCardSelect, isPreviewMode}) => {
                         </Typography>
                         <Typography mb={0}>
                             {!adult ? (
-                                <img className='icon' src={adultIcon} alt=""/>
+                                <img className="icon" src={adultIcon} alt=""/>
                             ) : 'new'}
                         </Typography>
                     </Box>
                 </CardInfo>
             </Link>
         </Card>
-    )
-}
+    );
+};
 
 CardFilm.propTypes = {
     film: PropTypes.shape({
@@ -107,7 +107,7 @@ CardFilm.propTypes = {
         adult: PropTypes.bool,
         voteAverage: PropTypes.number,
     }).isRequired,
-    onCardSelect: PropTypes.func
-}
+    onCardSelect: PropTypes.func,
+};
 
-export default CardFilm
+export default CardFilm;

@@ -1,7 +1,7 @@
-import { Field } from 'react-final-form'
+import { Field } from 'react-final-form';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage } from 'react-intl';
 
 export const AdultField = () => (
     <Field
@@ -12,4 +12,4 @@ export const AdultField = () => (
                 control={<Checkbox {...input} />} label={<FormattedMessage id="filters.include_adult"/>} />
         )}
     />
-)
+);

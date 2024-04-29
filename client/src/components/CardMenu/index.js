@@ -16,7 +16,7 @@ const CardMenu = ({ children }) => {
     return (
         <>
             <IconButton
-                sx={{ position: "absolute", right: 5, top: 5,
+                sx={{ position: 'absolute', right: 5, top: 5,
                     background: 'rgba(255, 255, 255, .3)' }}
                 aria-label="more"
                 id="long-button"
@@ -42,7 +42,7 @@ const CardMenu = ({ children }) => {
                 {children}
             </Menu>
         </>
-    )
-}
+    );
+};
 
 export default CardMenu;

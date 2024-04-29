@@ -5,9 +5,9 @@ import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {Box, CardContent} from "@mui/material";
+import {Box, CardContent} from '@mui/material';
 
-import adultIcon from "../../assets/img/adult.svg"
+import adultIcon from '../../assets/img/adult.svg';
 
 
 const CardInfo = styled(CardContent)(({theme}) => ({
@@ -15,18 +15,18 @@ const CardInfo = styled(CardContent)(({theme}) => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: 140,
-    width: 224
+    width: 224,
 }));
 
 
 const CardFilmSearch = ({film}) => {
-    const {id, title, image, releaseDate, adult } = film
+    const {id, title, image, releaseDate, adult } = film;
 
     return (
         <Link to={`/film/${id}`} key={id}>
-            <Card sx={{ width: 320, height: '134px', position: "relative", display: 'flex', boxShadow: 3}}>
+            <Card sx={{ width: 320, height: '134px', position: 'relative', display: 'flex', boxShadow: 3}}>
                 <Box>
-                    <CardMedia sx={{minWidth: '92px'}} component="img" height="134" image={image} alt='img'/>
+                    <CardMedia sx={{minWidth: '92px'}} component="img" height="134" image={image} alt="img"/>
                 </Box>
                 <CardInfo>
                     <Typography variant="h5" sx={{fontSize: '17px'}} gutterBottom component="div">
@@ -39,15 +39,15 @@ const CardFilmSearch = ({film}) => {
                         </Typography>
                         <Typography mb={0}>
                             {!adult ? (
-                                <img className='icon' src={adultIcon} alt=""/>
+                                <img className="icon" src={adultIcon} alt=""/>
                             ) : 'new'}
                         </Typography>
                     </Box>
                 </CardInfo>
             </Card>
         </Link>
-    )
-}
+    );
+};
 
 CardFilmSearch.propTypes = {
     film: PropTypes.shape({
@@ -57,7 +57,7 @@ CardFilmSearch.propTypes = {
         adult: PropTypes.bool,
         voteAverage: PropTypes.number,
     }).isRequired,
-    onCardSelect: PropTypes.func
-}
+    onCardSelect: PropTypes.func,
+};
 
-export default CardFilmSearch
+export default CardFilmSearch;

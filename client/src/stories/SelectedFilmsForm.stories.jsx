@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { SelectedFilmsForm } from '../components'
+import { SelectedFilmsForm } from '../components';
 
 export default {
     title: 'Forms/SelectedMovies',
-    component: SelectedFilmsForm
+    component: SelectedFilmsForm,
 };
 
 const Template = (args) => <SelectedFilmsForm {...args} />;

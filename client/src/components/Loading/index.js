@@ -1,6 +1,6 @@
-import {Box, CircularProgress} from "@mui/material";
-import Paper from "@mui/material/Paper";
-import {styled} from "@mui/material/styles";
+import {Box, CircularProgress} from '@mui/material';
+import Paper from '@mui/material/Paper';
+import {styled} from '@mui/material/styles';
 
 
 const PaperLoading = styled(Paper)(({ theme }) => ({
@@ -8,7 +8,7 @@ const PaperLoading = styled(Paper)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     margin:'auto',
-}))
+}));
 
 const Loading = () => {
     return (
@@ -17,7 +17,7 @@ const Loading = () => {
                 <CircularProgress sx={{ my: 7}} size="5rem" />
             </PaperLoading>
         </Box>
-    )
-}
+    );
+};
 
-export default Loading
+export default Loading;

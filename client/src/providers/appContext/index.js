@@ -1,15 +1,15 @@
 import React, { useReducer, createContext } from 'react';
 
-import {useDefaultContext} from "./defaultContext";
-import {saveToStorage} from "../../utils/localStorage";
-import {STORAGE_KEY} from "../../const";
+import {useDefaultContext} from './defaultContext';
+import {saveToStorage} from '../../utils/localStorage';
+import {STORAGE_KEY} from '../../const';
 
 const AppContext = createContext();
 
 
 let reducer = (state, action) => {
     switch (action.type) {
-        case "setLocale":
+        case 'setLocale':
             saveToStorage(STORAGE_KEY, action.locale);
             return { ...state, locale: action.locale };
     }

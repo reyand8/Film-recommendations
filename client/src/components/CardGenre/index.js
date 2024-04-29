@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 
-import theme from '../../assets/theme'
+import theme from '../../assets/theme';
 
 
 export const CardGenre = ({genre}) => {
-   const {id, name} = genre
+   const {id, name} = genre;
     return (
         <Link to={`/genre/${id}`}>
             <Card sx={{ display: 'flex', alignItems: 'center',
@@ -20,13 +20,13 @@ export const CardGenre = ({genre}) => {
                     </Typography>
             </Card>
         </Link>
-    )
-}
+    );
+};
 
 CardGenre.propTypes = {
     genre: PropTypes.shape({
         name: PropTypes.string,
     }),
-}
+};
 
-export default CardGenre
+export default CardGenre;

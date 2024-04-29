@@ -30,12 +30,12 @@ export default {
                 'primary_release_date': 'Fecha de lanzamiento principal',
                 'original_title': 'Titulo original',
                 'vote_average': 'Promedio de votos',
-                'vote_count': 'Recuento de votos'
+                'vote_count': 'Recuento de votos',
             },
             sort_direction_options: {
                 asc: 'ASC',
-                desc: 'DESC'
-            }
+                desc: 'DESC',
+            },
         },
         singlePage: {
             duration: 'Duración',

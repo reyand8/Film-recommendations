@@ -1,6 +1,6 @@
-import {FormattedMessage} from "react-intl";
-import { Field } from 'react-final-form'
-import {TextField} from "@mui/material";
+import {FormattedMessage} from 'react-intl';
+import { Field } from 'react-final-form';
+import {TextField} from '@mui/material';
 
 
 export const ReleaseDateTo = () => {
@@ -17,5 +17,5 @@ export const ReleaseDateTo = () => {
                            {...input}/>
             )}
         />
-    )
-}
+    );
+};

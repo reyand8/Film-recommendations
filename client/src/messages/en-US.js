@@ -30,17 +30,17 @@ export default {
                 'primary_release_date': 'Primary release date',
                 'original_title': 'Original title',
                 'vote_average': 'Vote average',
-                'vote_count': 'Vote count'
+                'vote_count': 'Vote count',
             },
             sort_direction_options: {
                 asc: 'ASC',
-                desc: 'DESC'
+                desc: 'DESC',
             },
         },
         singlePage: {
             duration: 'Duration',
             release_date: 'Release date',
             genres: 'Genres',
-        }
-    }
+        },
+    },
 };

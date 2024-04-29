@@ -30,11 +30,11 @@ export default {
                 'primary_release_date': 'Первая дата выпуска',
                 'original_title': 'Оригинальное название',
                 'vote_average': 'Средняя оценка',
-                'vote_count': 'Количество оценок'
+                'vote_count': 'Количество оценок',
             },
             sort_direction_options: {
                 asc: 'ASC',
-                desc: 'DESC'
+                desc: 'DESC',
             },
         },
         singlePage: {

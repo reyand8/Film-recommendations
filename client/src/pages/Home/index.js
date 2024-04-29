@@ -1,21 +1,21 @@
-import {useState} from "react";
-import {Box, Grid} from "@mui/material";
-import Paper from "@mui/material/Paper"
+import {useState} from 'react';
+import {Box, Grid} from '@mui/material';
+import Paper from '@mui/material/Paper';
 
-import {Filters} from "../../components/Filters/";
-import {useFilters} from "../../hooks/useFilters";
-import PopularFilms from "./components/PopularFilms";
-import FilterFilms from "./components/FilterFilms";
+import {Filters} from '../../components/Filters/';
+import {useFilters} from '../../hooks/useFilters';
+import PopularFilms from './components/PopularFilms';
+import FilterFilms from './components/FilterFilms';
 
 
 const Home = () => {
-    const { filter, setFilter, setPage } = useFilters()
-    const [click, setClick] = useState(false)
+    const { filter, setFilter, setPage } = useFilters();
+    const [click, setClick] = useState(false);
 
     const onSubmit = (data) => {
-        setClick(true)
-        setFilter(data)
-    }
+        setClick(true);
+        setFilter(data);
+    };
 
     return (
         <>
@@ -35,8 +35,8 @@ const Home = () => {
                 </Grid>
             </Box>
         </>
-    )
-}
+    );
+};
 
 
-export default Home
+export default Home;

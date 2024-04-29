@@ -1,4 +1,4 @@
-import {createTheme} from "@mui/material";
+import {createTheme} from '@mui/material';
 
 
 const theme = createTheme({
@@ -83,4 +83,4 @@ const theme = createTheme({
     },
 });
 
-export default theme
+export default theme;

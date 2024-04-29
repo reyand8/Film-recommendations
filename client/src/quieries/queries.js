@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 
 export const FILMS_BY_FILTER_QUERY = gql`
@@ -17,7 +17,7 @@ export const FILMS_BY_FILTER_QUERY = gql`
             }
         }
     }
-`
+`;
 
 export const FILMS_BY_POPULARITY_QUERY = gql`
     query Films($page: Int) {
@@ -39,7 +39,7 @@ export const FILMS_BY_POPULARITY_QUERY = gql`
             }
         }
     }
-`
+`;
 
 export const GENRES_QUERY = gql`
     query Genres {
@@ -48,7 +48,7 @@ export const GENRES_QUERY = gql`
             name
         }
     }
-`
+`;
 
 export const FILMS_BY_SEARCH_QUERY = gql`
     query Films($search: FilmsSearchInput) {
@@ -66,7 +66,7 @@ export const FILMS_BY_SEARCH_QUERY = gql`
             }
         }
     }
-`
+`;
 
 export const FILM_DETAILS_QUERY = gql`
     query FilmsById($ids: [Int]) {
@@ -89,7 +89,7 @@ export const FILM_DETAILS_QUERY = gql`
             }
         }
     }
-`
+`;
 
 export const FILMS_BY_ID_QUERY = gql`
     query FilmsById($ids: [Int]) {
@@ -102,7 +102,7 @@ export const FILMS_BY_ID_QUERY = gql`
             releaseDate(format: "dd.MM.yyyy")
         }
     }
-`
+`;
 
 export const FILMS_BY_GENRE_QUERY = gql`
     query Films($filter: FilmsFilterInput) {
@@ -120,4 +120,4 @@ export const FILMS_BY_GENRE_QUERY = gql`
             }
         }
     }
-`
+`;

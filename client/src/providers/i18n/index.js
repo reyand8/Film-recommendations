@@ -1,9 +1,9 @@
-import {IntlProvider} from "react-intl";
-import {Fragment} from "react";
-import {flatten} from "flat";
-import PropTypes from "prop-types";
+import {IntlProvider} from 'react-intl';
+import {Fragment} from 'react';
+import {flatten} from 'flat';
+import PropTypes from 'prop-types';
 
-import {LOCALES} from "../../const";
+import {LOCALES} from '../../const';
 import messages from '../../messages';
 
 const Provider = ({children, locale = LOCALES.ENGLISH}) => (
@@ -14,20 +14,20 @@ const Provider = ({children, locale = LOCALES.ENGLISH}) => (
         >
             {children}
         </IntlProvider>
-    )
+    );
 
-Provider.displayName = 'I18nProvider'
+Provider.displayName = 'I18nProvider';
 
 Provider.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
     ]).isRequired,
-    locale: PropTypes.oneOf(Object.values(LOCALES))
-}
+    locale: PropTypes.oneOf(Object.values(LOCALES)),
+};
 
 Provider.defaultProps = {
-    locale: LOCALES.ENGLISH
-}
+    locale: LOCALES.ENGLISH,
+};
 
-export default Provider
+export default Provider;

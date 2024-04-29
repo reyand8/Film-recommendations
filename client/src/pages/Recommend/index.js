@@ -1,22 +1,22 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import {Box} from "@mui/material";
-import { useQuery } from "@apollo/client";
+import {Box} from '@mui/material';
+import { useQuery } from '@apollo/client';
 
-import { CardFilm } from '../../components'
-import DataError from "../../components/DataError";
-import Loading from "../../components/Loading";
-import {FILM_DETAILS_QUERY} from "../../quieries/queries";
+import { CardFilm } from '../../components';
+import DataError from '../../components/DataError';
+import Loading from '../../components/Loading';
+import {FILM_DETAILS_QUERY} from '../../quieries/queries';
 
 
 const Recommend = () => {
-    const [searchParams] = useSearchParams()
+    const [searchParams] = useSearchParams();
     const {loading, error, data} = useQuery(FILM_DETAILS_QUERY, {
         variables: {
-            ids: searchParams.get('ids')?.split(',').map((id) => +id)
-        }
-    })
+            ids: searchParams.get('ids')?.split(',').map((id) => +id),
+        },
+    });
 
     if (loading) {
         return <Loading/>;
@@ -27,7 +27,7 @@ const Recommend = () => {
     }
 
     return (
-        <Box sx={{height: "100%", marginBottom: '40px'}}>
+        <Box sx={{height: '100%', marginBottom: '40px'}}>
             <Typography sx={{my: 4}} variant="h2" component="h1" gutterBottom>
                 {searchParams.get('title')}
             </Typography>
@@ -42,7 +42,7 @@ const Recommend = () => {
             )}
             <Grid sx={{height: '90px'}}></Grid>
         </Box>
-    )
-}
+    );
+};
 
 export default Recommend;

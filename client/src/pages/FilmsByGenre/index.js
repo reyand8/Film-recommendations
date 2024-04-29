@@ -1,45 +1,45 @@
-import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
-import {useQuery} from "@apollo/client";
+import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
+import {useQuery} from '@apollo/client';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import {Box, Grid, Pagination} from "@mui/material";
-import Paper from "@mui/material/Paper";
+import {Box, Grid, Pagination} from '@mui/material';
+import Paper from '@mui/material/Paper';
 
-import {useFilters} from "../../hooks/useFilters";
-import {useFilms} from "../../hooks/useFilms";
-import DataError from "../../components/DataError";
-import {SortMenu} from "../../components/Filters/";
-import {CardFilm, SelectedFilmsSection} from "../../components";
-import Loading from "../../components/Loading";
-import {FILMS_BY_GENRE_QUERY} from "../../quieries/queries";
+import {useFilters} from '../../hooks/useFilters';
+import {useFilms} from '../../hooks/useFilms';
+import DataError from '../../components/DataError';
+import {SortMenu} from '../../components/Filters/';
+import {CardFilm, SelectedFilmsSection} from '../../components';
+import Loading from '../../components/Loading';
+import {FILMS_BY_GENRE_QUERY} from '../../quieries/queries';
 
 
 const FilmsByGenre = () => {
-    const { filter, setFilterFields, setFilter, setPage } = useFilters()
+    const { filter, setFilterFields, setFilter, setPage } = useFilters();
     const { selectedFilms, selectFilm, deleteFilm } = useFilms();
-    const [openSorting, setOpenSorting] = useState(false)
+    const [openSorting, setOpenSorting] = useState(false);
     const { id } = useParams();
 
     useEffect(() => {
-        setFilterFields({...filter, genre: +id})
+        setFilterFields({...filter, genre: +id});
     }, []);
 
     const {loading, error, data } = useQuery(FILMS_BY_GENRE_QUERY,
-        {variables: {filter}})
+        {variables: {filter}});
 
     const onSubmit = (data) => {
-        setFilter({...data, genre: +id})
-    }
+        setFilter({...data, genre: +id});
+    };
 
     const paginationHandler = (event, page) => {
-        setPage(page)
-    }
+        setPage(page);
+    };
 
-    const pagesCount = data?.filmsByGenre?.totalPages <= 500 ? data?.filmsByGenre?.totalPages : 500
+    const pagesCount = data?.filmsByGenre?.totalPages <= 500 ? data?.filmsByGenre?.totalPages : 500;
 
     const sortMenu = () => {
-        openSorting ? setOpenSorting(false) : setOpenSorting(true)
-    }
+        openSorting ? setOpenSorting(false) : setOpenSorting(true);
+    };
 
     if (error) {
         return <DataError/>;
@@ -90,7 +90,7 @@ const FilmsByGenre = () => {
                 </Grid>
             </Box>
         </>
-    )
-}
+    );
+};
 
-export default FilmsByGenre
+export default FilmsByGenre;

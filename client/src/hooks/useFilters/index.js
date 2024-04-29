@@ -9,26 +9,26 @@ export const useFilters = () => {
         sortBy: 'original_title',
         sortDirection: SORT_DIRECTION.DESC,
         includeAdult: false,
-    })
+    });
 
     const setPage = useCallback((page) => {
         setFilterFields({
             ...filter,
-            page
-        })
-    }, [filter])
+            page,
+        });
+    }, [filter]);
 
     const setFilter = useCallback((filterFields) => {
         setFilterFields({
             ...filter,
             ...filterFields,
-        })
-    }, [filter])
+        });
+    }, [filter]);
 
     return {
         filter,
         setFilterFields,
         setPage,
-        setFilter
-    }
-}
+        setFilter,
+    };
+};

@@ -1,15 +1,15 @@
-import React from "react";
-import {useQuery} from "@apollo/client";
-import {Box, Grid} from "@mui/material";
+import React from 'react';
+import {useQuery} from '@apollo/client';
+import {Box, Grid} from '@mui/material';
 
-import CardGenre from "../../components/CardGenre";
-import Loading from "../../components/Loading";
-import DataError from "../../components/DataError";
-import {GENRES_QUERY} from "../../quieries/queries";
+import CardGenre from '../../components/CardGenre';
+import Loading from '../../components/Loading';
+import DataError from '../../components/DataError';
+import {GENRES_QUERY} from '../../quieries/queries';
 
 
 const Genres = () => {
-    const {loading, error, data } = useQuery(GENRES_QUERY)
+    const {loading, error, data } = useQuery(GENRES_QUERY);
 
     if (loading) {
         return <Loading/>;
@@ -36,8 +36,8 @@ const Genres = () => {
             </Grid>
         </Box>
 
-    )
-}
+    );
+};
 
 
-export default Genres
+export default Genres;

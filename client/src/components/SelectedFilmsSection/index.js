@@ -1,6 +1,6 @@
-import React from "react";
-import {useState} from "react";
-import {FormattedMessage} from "react-intl";
+import React from 'react';
+import {useState} from 'react';
+import {FormattedMessage} from 'react-intl';
 
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
@@ -9,9 +9,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import selectedFilmEmpty from '../../assets/img/selected_film_empty.png';
-import CardFilmSelected from "../CardFilmSelected";
-import SelectedFilmsForm from "../SelectedFilmsForm";
-import ConfirmModal from "../ConfirmModal";
+import CardFilmSelected from '../CardFilmSelected';
+import SelectedFilmsForm from '../SelectedFilmsForm';
+import ConfirmModal from '../ConfirmModal';
 
 
 
@@ -30,30 +30,30 @@ const SelectedFilms = styled(Paper)(({ theme }) => ({
 const FilmsList = styled(Stack)(({theme}) => ({
     height: '100%',
     overflowY: 'scroll',
-}))
+}));
 
 const NoFilms = styled(Box)(({theme}) => ({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'column'
-}))
+    flexDirection: 'column',
+}));
 
 const SelectedFilmsSection = ({ selectedFilms, deleteFilm }) => {
     const [listName, setListName] = useState('');
     const [link, setLink] = useState('');
 
     const onSubmit = ({ listName }) => {
-        const ids = selectedFilms.map(({id}) => id)
-        const link = `${window.location.host}/recommend?title=${listName}&ids=${ids.join()}`
+        const ids = selectedFilms.map(({id}) => id);
+        const link = `${window.location.host}/recommend?title=${listName}&ids=${ids.join()}`;
         setLink(link);
-        setListName(listName)
-    }
+        setListName(listName);
+    };
 
     const onCloseConfirmModal = () => {
-        setLink('')
-    }
+        setLink('');
+    };
 
     if (!selectedFilms.length) {
         return (
@@ -62,7 +62,7 @@ const SelectedFilmsSection = ({ selectedFilms, deleteFilm }) => {
                     <Box component="img"
                         sx={{
                             width: '60%',
-                            opacity: '.6'
+                            opacity: '.6',
                         }}
                         alt="No images."
                         src={selectedFilmEmpty}
@@ -72,7 +72,7 @@ const SelectedFilmsSection = ({ selectedFilms, deleteFilm }) => {
                     </Typography>
                 </NoFilms>
             </SelectedFilms>
-        )
+        );
     }
 
     return (
@@ -94,7 +94,7 @@ const SelectedFilmsSection = ({ selectedFilms, deleteFilm }) => {
                 open={!!link}
                 onClose={onCloseConfirmModal}/>
         </SelectedFilms>
-    )
+    );
 };
 
 export default SelectedFilmsSection;

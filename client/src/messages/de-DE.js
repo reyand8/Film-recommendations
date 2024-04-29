@@ -30,17 +30,17 @@ export default {
                 'primary_release_date': 'Primäres Veröffentlichungsdatum',
                 'original_title': 'Originaler Titel',
                 'vote_average': 'Stimmendurchschnitt',
-                'vote_count': 'Stimmenzahl'
+                'vote_count': 'Stimmenzahl',
             },
             sort_direction_options: {
                 asc: 'ASC',
-                desc: 'DESC'
+                desc: 'DESC',
             },
         },
         singlePage: {
             duration: 'Filmlänge',
             release_date: 'Veröffentlichungsdatum',
-            genres: 'Genres'
-        }
+            genres: 'Genres',
+        },
     },
 };
