@@ -1,8 +1,8 @@
 import React, { useReducer, createContext } from 'react';
 
 import {useDefaultContext} from './defaultContext';
-import {saveToStorage} from '../../utils/localStorage';
-import {STORAGE_KEY} from '../../const';
+import {saveIdsToStorage, saveToStorage} from '../../utils/localStorage';
+import {STORAGE_LOCALE_KEY, STORAGE_SELECTED_FILMS_KEY} from '../../const';
 
 const AppContext = createContext();
 
@@ -10,8 +10,11 @@ const AppContext = createContext();
 let reducer = (state, action) => {
     switch (action.type) {
         case 'setLocale':
-            saveToStorage(STORAGE_KEY, action.locale);
+            saveToStorage(STORAGE_LOCALE_KEY, action.locale);
             return { ...state, locale: action.locale };
+        case 'setSelectedFilms':
+            saveIdsToStorage(STORAGE_SELECTED_FILMS_KEY, action.film);
+            return {...state, selectedFilms: action.film};
     }
 };
 
