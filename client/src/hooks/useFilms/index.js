@@ -18,6 +18,18 @@ export const useFilms = () => {
         }
     }, [selectedFilms]);
 
+    const deleteFilm = useCallback((film) => {
+        setSelectedFilms(selectedFilms.filter(({id}) => id !== film.id));
+        deleteLocalStorageFilms(film.id);
+    }, [selectedFilms]);
+
+    const deleteLocalStorageFilms = useCallback((film) => {
+        dispatch({
+            type: 'deleteSelectedFilms',
+            film,
+        });
+    }, []);
+
     const setLocalStorageFilms = useCallback((film) => {
         dispatch({
             type: 'setSelectedFilms',
@@ -25,9 +37,6 @@ export const useFilms = () => {
         });
     }, []);
 
-    const deleteFilm = useCallback((film) => {
-        setSelectedFilms(selectedFilms.filter(({id}) => id !== film.id));
-    }, [selectedFilms]);
 
     return {
         selectedFilms,

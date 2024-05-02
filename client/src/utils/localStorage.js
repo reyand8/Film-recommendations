@@ -12,6 +12,18 @@ export const saveIdsToStorage = (name, date) => {
     window.localStorage.setItem(name, JSON.stringify(arrayId));
 };
 
+export const deleteIdsFromStorage = (name, date) => {
+    if (!window || !window.localStorage) {
+        return;
+    }
+
+    const arrayId = JSON.parse(window.localStorage.getItem(name));
+
+    const filterArray = arrayId.filter(item => item !== date);
+
+    window.localStorage.setItem(name, JSON.stringify(filterArray));
+};
+
 export const saveToStorage = (name, date) => {
     if (!window || !window.localStorage) {
         return;
