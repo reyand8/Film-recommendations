@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import {Box, Grid, Typography} from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
-import theme from '../../assets/theme';
+import theme from '../../../assets/theme';
 import CardMedia from '@mui/material/CardMedia';
 import Paper from '@mui/material/Paper';
 
-import adultIcon from '../../assets/img/adult.svg';
-import {changeColor, getVoteCicle} from '../../common';
+import adultIcon from '../../../assets/img/adult.svg';
+import {changeColor, getVoteCicle} from '../../../common';
 import {FormattedMessage} from 'react-intl';
 
 

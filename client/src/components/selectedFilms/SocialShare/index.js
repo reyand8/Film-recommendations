@@ -7,7 +7,7 @@ import {
     TwitterIcon,
 } from 'react-share';
 
-import { SOCIAL_BUTTON_SIZE } from '../../const';
+import { SOCIAL_BUTTON_SIZE } from '../../../const';
 
 const SocialShare = ({ url, title}) => (
     <Stack direction="row" spacing={1}>

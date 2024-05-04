@@ -9,7 +9,7 @@ import {Navigation} from './components';
 import {AppContext} from './providers/appContext';
 import I18nProvider from './providers/i18n';
 import theme  from './assets/theme.js';
-import AppRoutes from './components/AppRoutes/AppRoutes';
+import AppRoutes from './components/routes/AppRoutes/AppRoutes';
 
 
 function App() {

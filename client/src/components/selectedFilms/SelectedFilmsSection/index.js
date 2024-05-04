@@ -8,11 +8,11 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import selectedFilmEmpty from '../../assets/img/selected_film_empty.png';
-import CardFilmSelected from '../CardFilmSelected';
+import selectedFilmEmpty from '../../../assets/img/selected_film_empty.png';
+import CardFilmSelected from '../../card/CardFilmSelected';
 import SelectedFilmsForm from '../SelectedFilmsForm';
 import ConfirmModal from '../ConfirmModal';
-import Loading from '../Loading';
+import Loading from '../../status/Loading';
 
 
 

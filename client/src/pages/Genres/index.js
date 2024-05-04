@@ -2,9 +2,9 @@ import React from 'react';
 import {useQuery} from '@apollo/client';
 import {Box, Grid} from '@mui/material';
 
-import CardGenre from '../../components/CardGenre';
-import Loading from '../../components/Loading';
-import DataError from '../../components/DataError';
+import CardGenre from '../../components/card/CardGenre';
+import Loading from '../../components/status/Loading';
+import DataError from '../../components/status/DataError';
 import {GENRES_QUERY} from '../../quieries/queries';
 
 

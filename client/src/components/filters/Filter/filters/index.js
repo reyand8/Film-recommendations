@@ -12,9 +12,9 @@ import {
     AdultField, ReleaseDateFrom,
     SubmitField, ReleaseDateTo,
     GenreField } from '../components';
-import Loading from '../../Loading';
-import DataError from '../../DataError';
-import {GENRES_QUERY} from '../../../quieries/queries';
+import Loading from '../../../status/Loading';
+import DataError from '../../../status/DataError';
+import {GENRES_QUERY} from '../../../../quieries/queries';
 
 
 const MainFilters = styled(Box)(({ theme }) => ({

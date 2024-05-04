@@ -9,11 +9,11 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
 import {FILMS_BY_SEARCH_QUERY} from '../../quieries/queries';
-import Loading from '../../components/Loading';
+import Loading from '../../components/status/Loading';
 import {CardFilm, SelectedFilmsSection} from '../../components';
 import {useFilms} from '../../hooks/useFilms';
 import theme from '../../assets/theme';
-import DataError from '../../components/DataError';
+import DataError from '../../components/status/DataError';
 
 
 const MainSearch = styled('div')(({ theme }) => ({

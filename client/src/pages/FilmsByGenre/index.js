@@ -7,10 +7,10 @@ import Paper from '@mui/material/Paper';
 
 import {useFilters} from '../../hooks/useFilters';
 import {useFilms} from '../../hooks/useFilms';
-import DataError from '../../components/DataError';
-import {SortMenu} from '../../components/Filters/';
+import DataError from '../../components/status/DataError';
+import {SortMenu} from '../../components/filters/Filter';
 import {CardFilm, SelectedFilmsSection} from '../../components';
-import Loading from '../../components/Loading';
+import Loading from '../../components/status/Loading';
 import {FILMS_BY_GENRE_QUERY} from '../../quieries/queries';
 
 

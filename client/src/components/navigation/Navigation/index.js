@@ -19,13 +19,13 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import {styled} from '@mui/material/styles';
 
-import {AppContext} from '../../providers/appContext';
-import {LOCALES} from '../../const';
-import theme from '../../assets/theme';
-import CardFilmSearch from '../CardFilmSearch';
-import {FILMS_BY_SEARCH_QUERY} from '../../quieries/queries';
-import Loading from '../Loading';
-import DataError from '../DataError';
+import {AppContext} from '../../../providers/appContext';
+import {LOCALES} from '../../../const';
+import theme from '../../../assets/theme';
+import CardFilmSearch from '../../card/CardFilmSearch';
+import {FILMS_BY_SEARCH_QUERY} from '../../../quieries/queries';
+import Loading from '../../status/Loading';
+import DataError from '../../status/DataError';
 
 
 const Search = styled('div')(({ theme }) => ({

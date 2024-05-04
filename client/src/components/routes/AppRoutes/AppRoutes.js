@@ -1,10 +1,10 @@
 import {Route, Routes} from 'react-router-dom';
 
-import {ROUTES} from '../../routes';
+import {ROUTES} from '../../../routes';
 import {
         Home, Recommend, SingleFilm, Genres,
-        FilmsByGenre, Search, Account
-} from '../../pages';
+        FilmsByGenre, Search, Account,
+} from '../../../pages';
 
 
 const AppRoutes = () => (

@@ -4,8 +4,8 @@ import Paper from '@mui/material/Paper';
 import {useQuery} from '@apollo/client';
 
 import {CardFilm} from '../../../components';
-import Loading from '../../../components/Loading';
-import DataError from '../../../components/DataError';
+import Loading from '../../../components/status/Loading';
+import DataError from '../../../components/status/DataError';
 import {FILMS_BY_POPULARITY_QUERY} from '../../../quieries/queries';
 
 

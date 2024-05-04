@@ -3,9 +3,9 @@ import Paper from '@mui/material/Paper';
 import {useQuery} from '@apollo/client';
 
 import {CardFilm} from '../../../components';
-import DataError from '../../../components/DataError';
+import DataError from '../../../components/status/DataError';
 import {FILMS_BY_FILTER_QUERY} from '../../../quieries/queries';
-import Loading from '../../../components/Loading';
+import Loading from '../../../components/status/Loading';
 
 
 const FilterFilms = ({filter, setPage, selectFilm}) => {

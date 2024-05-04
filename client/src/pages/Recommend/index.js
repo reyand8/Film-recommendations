@@ -5,8 +5,8 @@ import {Box} from '@mui/material';
 import { useQuery } from '@apollo/client';
 
 import { CardFilm } from '../../components';
-import DataError from '../../components/DataError';
-import Loading from '../../components/Loading';
+import DataError from '../../components/status/DataError';
+import Loading from '../../components/status/Loading';
 import {FILM_DETAILS_QUERY} from '../../quieries/queries';
 
 

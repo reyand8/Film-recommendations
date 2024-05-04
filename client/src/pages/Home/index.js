@@ -3,12 +3,12 @@ import {Box, Grid} from '@mui/material';
 import Paper from '@mui/material/Paper';
 import {useQuery} from '@apollo/client';
 
-import {Filters} from '../../components/Filters/';
+import {Filters} from '../../components/filters/Filter';
 import {useFilters} from '../../hooks/useFilters';
 import PopularFilms from './components/PopularFilms';
 import FilterFilms from './components/FilterFilms';
 import {useFilms} from '../../hooks/useFilms';
-import SelectedFilmsSection from '../../components/SelectedFilmsSection';
+import SelectedFilmsSection from '../../components/selectedFilms/SelectedFilmsSection';
 import {AppContext} from '../../providers/appContext';
 import {FILM_DETAILS_QUERY} from '../../quieries/queries';
 

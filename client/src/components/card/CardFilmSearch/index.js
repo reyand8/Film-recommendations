@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {Box, CardContent} from '@mui/material';
 
-import adultIcon from '../../assets/img/adult.svg';
+import adultIcon from '../../../assets/img/adult.svg';
 
 
 const CardInfo = styled(CardContent)(({theme}) => ({

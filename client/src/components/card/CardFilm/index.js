@@ -9,9 +9,9 @@ import CircularProgress from '@mui/material/CircularProgress';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import {Box, CardContent} from '@mui/material';
 
-import adultIcon from '../../assets/img/adult.svg';
-import theme from '../../assets/theme';
-import {changeColor, getVoteCicle} from '../../common';
+import adultIcon from '../../../assets/img/adult.svg';
+import theme from '../../../assets/theme';
+import {changeColor, getVoteCicle} from '../../../common';
 
 
 const CardInfo = styled(CardContent)(({theme}) => ({

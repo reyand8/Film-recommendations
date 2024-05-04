@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 
-import theme from '../../assets/theme';
+import theme from '../../../assets/theme';
 
 
 export const CardGenre = ({genre}) => {
