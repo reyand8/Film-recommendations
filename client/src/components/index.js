@@ -1,8 +1,8 @@
-import Navigation from './Navigation';
-import CardFilm from './CardFilm';
-import CardFilmSelected from './CardFilmSelected';
-import SelectedFilmsForm from './SelectedFilmsForm';
-import SelectedFilmsSection from './SelectedFilmsSection';
+import Navigation from './navigation/Navigation';
+import CardFilm from './card/CardFilm';
+import CardFilmSelected from './card/CardFilmSelected';
+import SelectedFilmsForm from './selectedFilms/SelectedFilmsForm';
+import SelectedFilmsSection from './selectedFilms/SelectedFilmsSection';
 
 export {
     Navigation,

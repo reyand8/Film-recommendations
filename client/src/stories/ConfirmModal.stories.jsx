@@ -1,5 +1,5 @@
 import React from 'react';
-import ConfirmModal from '../components/ConfirmModal';
+import ConfirmModal from '../components/selectedFilms/ConfirmModal';
 
 export default {
     title: 'Confirm/ConfirmModal component',
