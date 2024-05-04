@@ -5,6 +5,7 @@ import {useQuery} from '@apollo/client';
 
 import Fade from '@mui/material/Fade';
 import LanguageIcon from '@mui/icons-material/Language';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {
@@ -179,11 +180,11 @@ const Navigation = () => {
     const burgerList = () => (
         <Box sx={{ width: 190, ml: 3 }} role="presentation">
             <List sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <Link component={RouterLink} to="settings">
+                <Link component={RouterLink} to="account">
                     <Button size="large"
-                            startIcon={<SettingsIcon/>}
+                            startIcon={<AccountCircleIcon/>}
                             onClick={() => setDrawerOpen(false)}>
-                        <FormattedMessage id="navigation.settings"/>
+                        <FormattedMessage id="navigation.account"/>
                     </Button>
                 </Link>
                 <>
@@ -293,28 +294,32 @@ const Navigation = () => {
                             <Button component={RouterLink}
                                     to="genres"
                                     size="large"
-                                    sx={{ my: 2, pt: 1.5, color:
+                                    sx={{ margin: 2, pt: 1.5, color:
                                         theme.palette.primary.contrastText, display: 'block',
                                     }}>
                                 <FormattedMessage id="navigation.genres" />
                             </Button>
-                            <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
+                            <Box sx={{ display: { xs: 'none', lg: 'flex' }, alignItems: 'center' }}>
                                 <Button component={RouterLink}
-                                        to="settings"
+                                        to="account"
                                         size="large"
+                                        startIcon={<AccountCircleIcon
+                                            sx={{ color: theme.palette.primary.contrastText, width: '28px', height: '28px'}}/>}
                                         sx={{
-                                            my: 2,
-                                            pt: 1.5,
-                                            color:
-                                            theme.palette.primary.contrastText,
+                                            width: '42px', height: '42px',
                                             display: 'block',
-                                }}>
-                                    <FormattedMessage id="navigation.settings" />
+                                        }}>
                                 </Button>
                             </Box>
                             <Button
-                                startIcon={<LanguageIcon sx={{ my: 2, color: theme.palette.primary.contrastText }}/>}
+                                startIcon={<LanguageIcon sx={{
+                                    color: theme.palette.primary.contrastText,
+                                    width: '28px', height: '28px'}}/>}
                                 size="large"
+                                sx={{
+                                    width: '42px', height: '42px',
+                                    display: 'block',
+                                }}
                                 aria-controls={open ? 'fade-menu' : undefined}
                                 aria-expanded={open ? 'true' : undefined}
                                 onClick={handleClick}>

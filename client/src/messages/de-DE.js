@@ -5,6 +5,7 @@ export default {
         'navigation': {
             'home': 'Filmempfehlungen',
             'settings': 'Einstellungen',
+            'account': 'Konto',
             'genres': 'Genres',
             'language': 'Sprache',
             'search': 'Suchen',

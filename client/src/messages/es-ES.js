@@ -5,6 +5,7 @@ export default {
         'navigation': {
             'home': 'Recomendacines de películas',
             'settings': 'Ajustes',
+            'account': 'Cuenta',
             'genres': 'Géneros',
             'language': 'Idioma',
             'search': 'Buscar',

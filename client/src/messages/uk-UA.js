@@ -5,6 +5,7 @@ export default {
         'navigation': {
             'home': 'Рекомендації фільмів',
             'settings': 'Налаштування',
+            'account': 'Особистий кабінет',
             'genres': 'Жанри',
             'language': 'Мова',
             'search': 'Пошук',
