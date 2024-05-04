@@ -1,5 +1,5 @@
 import Home from './Home';
-import Settings from './Settings';
+import Account from './Account';
 import Recommend from './Recommend';
 import SingleFilm from './SingleFilm';
 import FilmsByGenre from './FilmsByGenre';
@@ -8,7 +8,7 @@ import Genres from './Genres';
 
 export {
     Home,
-    Settings,
+    Account,
     Recommend,
     SingleFilm,
     FilmsByGenre,
