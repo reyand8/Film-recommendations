@@ -7,6 +7,6 @@ export const useDefaultContext = () => {
     const [ searchParams ] = useSearchParams();
     return {
         locale: getFromStorage(STORAGE_LOCALE_KEY) || searchParams.get('locale') || LOCALES.ENGLISH,
-        selectedFilms: getFromStorage(STORAGE_SELECTED_FILMS_KEY) || '',
+        selectedFilmsId: getFromStorage(STORAGE_SELECTED_FILMS_KEY) || [],
     };
 };

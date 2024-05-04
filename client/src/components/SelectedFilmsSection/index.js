@@ -12,6 +12,7 @@ import selectedFilmEmpty from '../../assets/img/selected_film_empty.png';
 import CardFilmSelected from '../CardFilmSelected';
 import SelectedFilmsForm from '../SelectedFilmsForm';
 import ConfirmModal from '../ConfirmModal';
+import Loading from '../Loading';
 
 
 
@@ -40,10 +41,9 @@ const NoFilms = styled(Box)(({theme}) => ({
     flexDirection: 'column',
 }));
 
-const SelectedFilmsSection = ({ selectedFilms, deleteFilm }) => {
+const SelectedFilmsSection = ({ selectedFilms, error, loading, deleteFilm }) => {
     const [listName, setListName] = useState('');
     const [link, setLink] = useState('');
-
     const onSubmit = ({ listName }) => {
         const ids = selectedFilms.map(({id}) => id);
         const link = `${window.location.host}/recommend?title=${listName}&ids=${ids.join()}`;
@@ -55,7 +55,12 @@ const SelectedFilmsSection = ({ selectedFilms, deleteFilm }) => {
         setLink('');
     };
 
-    if (!selectedFilms.length) {
+    if (loading) {
+        return <Loading/>;
+    }
+
+
+    if (!selectedFilms.length || error) {
         return (
             <SelectedFilms>
                 <NoFilms>

@@ -1,13 +1,11 @@
-import {useState, useCallback, useContext} from 'react';
+import {useState, useCallback} from 'react';
 
-import {MAX_SELECTED_FILMS} from '../../const';
-import {AppContext} from '../../providers/appContext';
-
+import {MAX_SELECTED_FILMS, STORAGE_SELECTED_FILMS_KEY} from '../../const';
+import {deleteIdsFromStorage, saveIdsToStorage} from '../../utils/localStorage';
 
 
 export const useFilms = () => {
     const [selectedFilms, setSelectedFilms] = useState([]);
-    const { dispatch } = useContext(AppContext);
 
     const selectFilm = useCallback((film) => {
         const length = selectedFilms.length;
@@ -19,27 +17,21 @@ export const useFilms = () => {
     }, [selectedFilms]);
 
     const deleteFilm = useCallback((film) => {
-        setSelectedFilms(selectedFilms.filter(({id}) => id !== film.id));
         deleteLocalStorageFilms(film.id);
+        setSelectedFilms(selectedFilms.filter(({id}) => id !== film.id));
     }, [selectedFilms]);
 
-    const deleteLocalStorageFilms = useCallback((film) => {
-        dispatch({
-            type: 'deleteSelectedFilms',
-            film,
-        });
-    }, []);
+    const setLocalStorageFilms = ((film) => {
+        saveIdsToStorage(STORAGE_SELECTED_FILMS_KEY, film);
+    });
 
-    const setLocalStorageFilms = useCallback((film) => {
-        dispatch({
-            type: 'setSelectedFilms',
-            film,
-        });
-    }, []);
-
+    const deleteLocalStorageFilms = ((film) => {
+        deleteIdsFromStorage(STORAGE_SELECTED_FILMS_KEY, film);
+    });
 
     return {
         selectedFilms,
+        setSelectedFilms,
         selectFilm,
         deleteFilm,
     };
