@@ -11,7 +11,7 @@ import DataError from '../../components/status/DataError';
 import {SortMenu} from '../../components/filters/Filter';
 import {CardFilm, SelectedFilmsSection} from '../../components';
 import Loading from '../../components/status/Loading';
-import {FILMS_BY_GENRE_QUERY} from '../../quieries/queries';
+import {FILMS_BY_GENRE_QUERY} from '../../gqlClient/quieries/queries';
 
 
 const FilmsByGenre = () => {

@@ -14,7 +14,7 @@ import {
     GenreField } from '../components';
 import Loading from '../../../status/Loading';
 import DataError from '../../../status/DataError';
-import {GENRES_QUERY} from '../../../../quieries/queries';
+import {GENRES_QUERY} from '../../../../gqlClient/quieries/queries';
 
 
 const MainFilters = styled(Box)(({ theme }) => ({

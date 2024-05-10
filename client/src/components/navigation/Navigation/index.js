@@ -23,7 +23,7 @@ import {AppContext} from '../../../providers/appContext';
 import {LOCALES} from '../../../const';
 import theme from '../../../assets/theme';
 import CardFilmSearch from '../../card/CardFilmSearch';
-import {FILMS_BY_SEARCH_QUERY} from '../../../quieries/queries';
+import {FILMS_BY_SEARCH_QUERY} from '../../../gqlClient/quieries/queries';
 import Loading from '../../status/Loading';
 import DataError from '../../status/DataError';
 

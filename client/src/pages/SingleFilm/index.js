@@ -6,7 +6,7 @@ import {Box, Grid} from '@mui/material';
 import DataError from '../../components/status/DataError';
 import Loading from '../../components/status/Loading';
 import CardSingleFilm from '../../components/card/CardSingleFilm';
-import {FILMS_BY_ID_QUERY} from '../../quieries/queries';
+import {FILMS_BY_ID_QUERY} from '../../gqlClient/quieries/queries';
 
 
 const SingleFilm = () => {

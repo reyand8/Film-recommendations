@@ -10,7 +10,7 @@ import FilterFilms from './components/FilterFilms';
 import {useFilms} from '../../hooks/useFilms';
 import SelectedFilmsSection from '../../components/selectedFilms/SelectedFilmsSection';
 import {AppContext} from '../../providers/appContext';
-import {FILM_DETAILS_QUERY} from '../../quieries/queries';
+import {FILM_DETAILS_QUERY} from '../../gqlClient/quieries/queries';
 
 
 const Home = () => {

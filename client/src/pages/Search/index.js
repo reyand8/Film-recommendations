@@ -8,7 +8,7 @@ import {styled} from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
-import {FILMS_BY_SEARCH_QUERY} from '../../quieries/queries';
+import {FILMS_BY_SEARCH_QUERY} from '../../gqlClient/quieries/queries';
 import Loading from '../../components/status/Loading';
 import {CardFilm, SelectedFilmsSection} from '../../components';
 import {useFilms} from '../../hooks/useFilms';

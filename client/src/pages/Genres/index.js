@@ -5,7 +5,7 @@ import {Box, Grid} from '@mui/material';
 import CardGenre from '../../components/card/CardGenre';
 import Loading from '../../components/status/Loading';
 import DataError from '../../components/status/DataError';
-import {GENRES_QUERY} from '../../quieries/queries';
+import {GENRES_QUERY} from '../../gqlClient/quieries/queries';
 
 
 const Genres = () => {

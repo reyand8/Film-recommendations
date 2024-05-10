@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/client';
 import { CardFilm } from '../../components';
 import DataError from '../../components/status/DataError';
 import Loading from '../../components/status/Loading';
-import {FILM_DETAILS_QUERY} from '../../quieries/queries';
+import {FILM_DETAILS_QUERY} from '../../gqlClient/quieries/queries';
 
 
 const Recommend = () => {
