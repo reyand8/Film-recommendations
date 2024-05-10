@@ -2,14 +2,18 @@ const fs = require('fs')
 const path = require('path')
 const { ApolloServer } = require('apollo-server');
 const Query = require('./resolvers/Query')
+const Mutation = require('./resolvers/Mutation')
+const {PrismaClient} = require("@prisma/client");
+const { getUserId } = require('./utils');
+
+const prisma = new PrismaClient({
+    errorFormat: 'minimal'
+});
 
 const resolvers = {
-    Query
+    Query,
+    Mutation
 }
-
-const context = ({req, res}) => ({
-    locale: req?.headers?.locale || 'en-US'
-})
 
 const server = new ApolloServer({
     typeDefs: fs.readFileSync(
@@ -17,7 +21,16 @@ const server = new ApolloServer({
         'utf8'
     ),
     resolvers,
-    context,
+    context: ({ req }) => {
+        return {
+            ...req,
+            prisma,
+            userId:
+                req && req.headers.authorization
+                    ? getUserId(req)
+                    : null
+        };
+    }
 })
 
 server
