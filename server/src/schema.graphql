@@ -5,6 +5,7 @@ type Query {
     filmsByGenre(filter: FilmsFilterInput): Films
     filmsById(ids: [Int]): [Film]
     genres: [Genre]
+    user: User
 }
 
 input FilmsFilterInput {
@@ -73,6 +74,10 @@ type Mutation {
         email: String!,
         password: String!
     ): AuthPayload
+    updateUser(
+        email: String!
+        username: String!
+    ): User
 }
 
 type User {

@@ -1,6 +1,8 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const {PrismaClient} = require('@prisma/client')
 
+const prisma = new PrismaClient();
 
 const { APP_SECRET } = require('../utils')
 
@@ -43,8 +45,17 @@ async function signInUser (parent, { email, password }, context, info) {
     }
 }
 
+async function updateUser(parent, {email, username}, context) {
+    const userId = context.userId
+    return prisma.user.update({
+        where: {id: userId},
+        data: {email, username}
+    })
+}
+
 
 module.exports = {
     signUpUser,
     signInUser,
+    updateUser,
 }

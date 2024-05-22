@@ -1,6 +1,8 @@
 const { getDetails, discoverFilm, getPopular, getFilmsByGenre, getFilmsBySearchQuery} = require('../modules/films');
 const {Film} = require("../modules/films/entities/Film");
 const {getList} = require("../modules/genres");
+const {PrismaClient} = require("@prisma/client");
+const prisma = new PrismaClient()
 
 
 async function filmsByFilter(parent, args, {locale}) {
@@ -29,6 +31,14 @@ async function genres(_, {}, {locale}) {
     return await getList(locale)
 }
 
+async function user(parent, args, context) {
+    return prisma.user.findUnique({
+        where: {
+            id: context.userId,
+        },
+    });
+};
+
 module.exports = {
     filmsByFilter,
     filmsBySearchQuery,
@@ -36,4 +46,5 @@ module.exports = {
     filmsById,
     filmsByGenre,
     genres,
+    user,
 }
