@@ -29,4 +29,16 @@ export const SIGN_IN_MUTATION = gql`
     }
 `;
 
+export const UPDATE_USER = gql `
+    mutation UpdateUserMutation(
+        $email: String!
+        $username: String!
+    ) {
+        updateUser(email: $email, username: $username) {
+            email
+            username
+        }
+    }
+`;
+
 
