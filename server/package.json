@@ -7,9 +7,14 @@
     "apollo-server": "^3.13.0",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "date-fns": "^3.6.0",
+    "fs": "^0.0.1-security",
     "graphql": "^16.8.1",
+    "graphql-upload": "^13.0.0",
     "jsonwebtoken": "^9.0.2",
-    "prisma": "^5.13.0"
+    "path": "^0.12.7",
+    "prisma": "^5.13.0",
+    "uuid": "^9.0.1"
   }
 }
