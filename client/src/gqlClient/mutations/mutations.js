@@ -41,4 +41,10 @@ export const UPDATE_USER = gql `
     }
 `;
 
-
+export const UPLOAD_IMAGE = gql`
+    mutation UploadImage($file: Upload!) {
+        updateImage(file: $file) {
+            image
+        }
+    }
+`;
