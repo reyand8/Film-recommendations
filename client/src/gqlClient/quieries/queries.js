@@ -121,3 +121,14 @@ export const FILMS_BY_GENRE_QUERY = gql`
         }
     }
 `;
+
+export const GET_USER = gql `
+    query GetUser {
+        user {
+            id
+            username
+            email
+            image
+        }
+    }
+`;
