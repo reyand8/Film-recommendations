@@ -14,7 +14,8 @@ import AppRoutes from './components/routes/AppRoutes/AppRoutes';
 
 function App() {
     const {state} = useContext(AppContext);
-    const httpLink = new HttpLink({uri: 'http://localhost:4000/'});
+    const httpLink = new HttpLink({uri: 'http://localhost:4000/graphql'});
+    const token =  localStorage.getItem('auth-token');
     const localeMiddleware = new ApolloLink((operation, forward) => {
         const customHeaders = operation.getContext().hasOwnProperty('headers')
             ? operation.getContext().headers
@@ -24,6 +25,7 @@ function App() {
             headers: {
                 ...customHeaders,
                 locale: state.locale,
+                authorization: token ? `Bearer ${token}` : '',
             },
         });
         return forward(operation);
