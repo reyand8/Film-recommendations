@@ -1,18 +1,24 @@
 const fs = require('fs')
+const express = require('express')
+const cors = require('cors')
 const path = require('path')
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer } = require('apollo-server-express');
 const Query = require('./resolvers/Query')
 const Mutation = require('./resolvers/Mutation')
 const {PrismaClient} = require("@prisma/client");
 const { getUserId } = require('./utils');
+const GraphQLUpload = require("graphql-upload/GraphQLUpload.js");
+const graphqlUploadExpress = require("graphql-upload/graphqlUploadExpress.js");
+
 
 const prisma = new PrismaClient({
     errorFormat: 'minimal'
 });
 
 const resolvers = {
+    Upload: GraphQLUpload,
     Query,
-    Mutation
+    Mutation,
 }
 
 const server = new ApolloServer({
@@ -33,8 +39,25 @@ const server = new ApolloServer({
     }
 })
 
-server
-    .listen()
-    .then(({ url }) =>
-        console.log(`Server is running on ${url}`)
-    );
+const app = express();
+
+// Middleware для обработки загрузки файлов
+app.use(graphqlUploadExpress({ maxFileSize: 15000000, maxFiles: 1 }));
+
+// Middleware CORS
+app.use(cors({ origin: 'http://localhost:3000' }));
+
+// Middleware для раздачи статических файлов
+const imageDir = path.join(__dirname, 'uploads');
+app.use('/uploads', express.static(imageDir));
+
+async function startServer() {
+    await server.start();
+    server.applyMiddleware({ app });
+}
+
+startServer().then(() => {
+    app.listen({ port: 4000 }, () =>
+        console.log(`Server ready at http://localhost:4000${server.graphqlPath}`)
+        );
+});
