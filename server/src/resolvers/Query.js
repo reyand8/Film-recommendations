@@ -37,7 +37,7 @@ async function user(parent, args, context) {
             id: context.userId,
         },
     });
-};
+}
 
 module.exports = {
     filmsByFilter,
