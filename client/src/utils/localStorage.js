@@ -5,7 +5,16 @@ export const saveIdsToStorage = (name, date) => {
 
     const arrayId = JSON.parse(window.localStorage.getItem(name)) || [];
 
-    if (!arrayId.includes(date)) {
+    if (Array.isArray(date)) {
+        console.log(date);
+        date.forEach(el => {
+            if (!arrayId.includes(el)) {
+                arrayId.push(el);
+            }
+        });
+    }
+
+    if (!arrayId.includes(date) && !Array.isArray(date) ) {
         arrayId.push(date);
     }
 
