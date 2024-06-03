@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 const { APP_SECRET } = require('../utils')
 
 
-async function signUpUser(parent, args, context, info) {
+async function signUpUser(parent, args, context) {
     const password = await bcrypt.hash(args.password, 10);
     const user = await context.prisma.user.create({
         data: {...args, password}
@@ -23,7 +23,7 @@ async function signUpUser(parent, args, context, info) {
     };
 }
 
-async function signInUser (parent, { email, password }, context, info) {
+async function signInUser (parent, { email, password }, context) {
     const user =
         await context.prisma.user.findUnique(
             {where: {email: email}}
@@ -44,6 +44,22 @@ async function signInUser (parent, { email, password }, context, info) {
     return {
         token,
         user,
+    }
+}
+
+async function deleteUser(parent, args, context) {
+    const userId = context.userId
+    if (!userId) {
+        throw new Error('Not authenticated');
+    }
+    try {
+        await prisma.user.delete({
+            where: {id: userId},
+        });
+        return true;
+    } catch (error) {
+        console.error(error);
+        return false;
     }
 }
 
@@ -101,5 +117,6 @@ module.exports = {
     signUpUser,
     signInUser,
     updateUser,
+    deleteUser,
     updateImage,
 }

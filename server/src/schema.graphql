@@ -84,6 +84,7 @@ type Mutation {
     updateImage(
         file: Upload!
     ): User!
+    deleteUser: Boolean!
 }
 
 type User {
