@@ -33,11 +33,19 @@ export const UPDATE_USER = gql `
     mutation UpdateUserMutation(
         $email: String!
         $username: String!
+        $selectedFilms: String
     ) {
-        updateUser(email: $email, username: $username) {
+        updateUser(email: $email, username: $username, selectedFilms: $selectedFilms) {
             email
             username
+            selectedFilms
         }
+    }
+`;
+
+export const DELETE_USER = gql `
+    mutation DeleteUserMutation {
+        deleteUser
     }
 `;
 
