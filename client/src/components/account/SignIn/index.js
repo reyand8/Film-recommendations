@@ -21,20 +21,19 @@ const TextFieldBox = styled(Box)(({ theme }) => ({
 }));
 
 
-const SignIn = ({formState, handlerChange, handleSubmit, signIn, setLogin}) => {
+const SignIn = ({formState, handlerChange, handleSubmit, setLogin}) => {
     return(
         <>
             <TextFieldBox component="form" onSubmit={handleSubmit}>
                 <TextField
                     sx={{mb: '16px'}}
-                    label="Username"
-                    placeholder="Enter username"
+                    label="Email"
+                    placeholder="Enter email"
+                    type="email"
                     variant="outlined"
+                    name="email"
                     fullWidth required
-                    inputProps={{
-                        pattern: '[A-Za-z ]+',
-                    }}
-                    value={formState.username}
+                    value={formState.email}
                     onChange={handlerChange}
                 />
                 <TextField
@@ -42,6 +41,7 @@ const SignIn = ({formState, handlerChange, handleSubmit, signIn, setLogin}) => {
                     placeholder="Enter password"
                     type="password"
                     variant="outlined"
+                    name="password"
                     fullWidth required
                     value={formState.password}
                     onChange={handlerChange}
@@ -55,8 +55,7 @@ const SignIn = ({formState, handlerChange, handleSubmit, signIn, setLogin}) => {
                     color="primary"
                     variant="contained"
                     style={btnstyle}
-                    fullWidth
-                    onClick={signIn}>
+                    fullWidth>
                     Sign In
                 </Button>
                 <Typography sx={{marginY: '12px'}}>
