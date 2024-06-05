@@ -27,8 +27,8 @@ const SignUp = ({formState, handlerChange, handleSubmit, setLogin}) => {
                 <TextField label="Username"
                            placeholder="Enter username"
                            name="username"
-                           value={formState.username}
                            variant="outlined" fullWidth required
+                           value={formState.username}
                            inputProps={{
                                pattern: '[A-Za-z ]+',
                            }}
@@ -38,8 +38,8 @@ const SignUp = ({formState, handlerChange, handleSubmit, setLogin}) => {
                            label="Email"
                            placeholder="Enter email"
                            name="email"
-                           value={formState.email}
                            variant="outlined" fullWidth required
+                           value={formState.email}
                            inputProps={{
                                type: 'email',
                            }}
@@ -47,10 +47,10 @@ const SignUp = ({formState, handlerChange, handleSubmit, setLogin}) => {
                 />
                 <TextField label="Password"
                            placeholder="Enter password"
-                           type="password"
                            name="password"
-                           value={formState.password}
+                           type="password"
                            variant="outlined" fullWidth required
+                           value={formState.password}
                            onChange={handlerChange}
                 />
                 <Button sx={{mb: '8px'}}
