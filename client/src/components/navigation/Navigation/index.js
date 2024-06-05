@@ -7,7 +7,6 @@ import Fade from '@mui/material/Fade';
 import LanguageIcon from '@mui/icons-material/Language';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
-import SettingsIcon from '@mui/icons-material/Settings';
 import {
     alpha, AppBar, Box, Drawer, Grid, IconButton, Link,
     List, Toolbar, Typography,
