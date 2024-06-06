@@ -8,7 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Paper from '@mui/material/Paper';
 
 import adultIcon from '../../../assets/img/adult.svg';
-import {changeColor, getVoteCicle} from '../../../common';
+import {changeColor, getVoteCicle} from '../../../common/common';
 import {FormattedMessage} from 'react-intl';
 
 

@@ -16,7 +16,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Alert from '@mui/material/Alert';
 import CloseIcon from '@mui/icons-material/Close';
 
-import { CONFIRM_TIMEOUT } from '../../../const';
+import { CONFIRM_TIMEOUT } from '../../../common/const';
 import SocialShare from '../SocialShare';
 
 

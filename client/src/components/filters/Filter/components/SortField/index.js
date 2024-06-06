@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-import { SORT_OPTIONS } from '../../../../../const';
+import { SORT_OPTIONS } from '../../../../../common/const';
 
 
 export const SortField = () => {

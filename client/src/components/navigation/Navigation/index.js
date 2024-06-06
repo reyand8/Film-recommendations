@@ -19,7 +19,7 @@ import InputBase from '@mui/material/InputBase';
 import {styled} from '@mui/material/styles';
 
 import {AppContext} from '../../../providers/appContext';
-import {LOCALES} from '../../../const';
+import {LOCALES} from '../../../common/const';
 import theme from '../../../assets/theme';
 import CardFilmSearch from '../../card/CardFilmSearch';
 import {FILMS_BY_SEARCH_QUERY} from '../../../gqlClient/quieries/queries';

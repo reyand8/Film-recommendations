@@ -8,7 +8,7 @@ import FormLabel from '@mui/material/FormLabel';
 import NorthIcon from '@mui/icons-material/North';
 import SouthIcon from '@mui/icons-material/South';
 
-import {SORT_DIRECTION} from '../../../../../const';
+import {SORT_DIRECTION} from '../../../../../common/const';
 
 
 

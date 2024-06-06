@@ -11,7 +11,7 @@ import {Box, CardContent} from '@mui/material';
 
 import adultIcon from '../../../assets/img/adult.svg';
 import theme from '../../../assets/theme';
-import {changeColor, getVoteCicle} from '../../../common';
+import {changeColor, getVoteCicle} from '../../../common/common';
 
 
 const CardInfo = styled(CardContent)(({theme}) => ({

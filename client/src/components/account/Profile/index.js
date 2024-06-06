@@ -18,7 +18,7 @@ import {useMutation} from '@apollo/client';
 import defaultImage from '../../../assets/img/default-image.png';
 import theme from '../../../assets/theme';
 import {DELETE_USER, UPDATE_USER, UPLOAD_IMAGE} from '../../../gqlClient/mutations/mutations';
-import {AUTH_TOKEN} from '../../../constants';
+import {AUTH_TOKEN} from '../../../common/const';
 import ConfirmDelete from '../../status/ConfirmDeleteAccount';
 
 

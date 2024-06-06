@@ -9,11 +9,11 @@ import SignIn from '../../components/account/SignIn';
 import SignUp from '../../components/account/SignUp';
 import Profile from '../../components/account/Profile';
 import Loading from '../../components/status/Loading';
-import {AUTH_TOKEN} from '../../constants';
+import {AUTH_TOKEN} from '../../common/const';
 import {GET_USER} from '../../gqlClient/quieries/queries';
 import {SIGN_UP_MUTATION, SIGN_IN_MUTATION, UPDATE_USER} from '../../gqlClient/mutations/mutations';
 import {saveIdsToStorage} from '../../utils/localStorage';
-import {STORAGE_SELECTED_FILMS_KEY} from '../../const';
+import {STORAGE_SELECTED_FILMS_KEY} from '../../common/const';
 
 const paperStyle={padding :20, minHeight:'42vh', maxWidth: 360, margin:'60px auto'};
 
