@@ -2,6 +2,8 @@ export const STORAGE_LOCALE_KEY = 'locale';
 
 export const STORAGE_SELECTED_FILMS_KEY = 'selectedFilms';
 
+export const AUTH_TOKEN = 'auth-token';
+
 export const MAX_SELECTED_FILMS = 20;
 
 export const CONFIRM_TIMEOUT = 3000;
