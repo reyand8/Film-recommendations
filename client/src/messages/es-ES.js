@@ -1,4 +1,4 @@
-import { LOCALES } from '../const';
+import { LOCALES } from '../common/const';
 
 export default {
     [LOCALES.SPANISH]: {
