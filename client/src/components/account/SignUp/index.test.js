@@ -2,12 +2,12 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import {isValid, validateSignUp} from '../validation';
-import SignUp from "./index";
+import SignUp from './index';
 
 jest.mock('../validation', () => ({
     validateSignUp: jest.fn(),
     isValid: jest.fn(),
-}))
+}));
 
 const mockHandleSubmit = jest.fn();
 const mockSetLogin = jest.fn();
@@ -22,9 +22,9 @@ describe('Sign up', () => {
         mockHandleSubmit.mockClear();
         mockSetLogin.mockClear();
         mockHandlerChange.mockClear();
-    })
+    });
 
-    test('should render SignUp ', () => {
+    test('should render SignUp', () => {
         render(<SignUp formState={formState} handlerChange={mockHandlerChange} handleSubmit={mockHandleSubmit} setLogin={mockSetLogin} />);
 
         expect(screen.getByLabelText(/Username/i)).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe('Sign up', () => {
     });
 
     test('should submit valid form', () => {
-        validateSignUp.mockReturnValue({ username: '', email: '', password: ''})
+        validateSignUp.mockReturnValue({ username: '', email: '', password: ''});
         isValid.mockReturnValue(true);
         render(<SignUp formState={formState} handlerChange={mockHandlerChange} handleSubmit={mockHandleSubmit} setLogin={mockSetLogin} />);
 
@@ -46,7 +46,7 @@ describe('Sign up', () => {
         expect(validateSignUp).toHaveBeenCalledWith(formState);
         expect(isValid).toHaveBeenCalledWith({ username: '', email: '', password: '' });
         expect(mockHandleSubmit).toHaveBeenCalled();
-    })
+    });
 
     test('should return errors', () => {
         const errors = { username: 'Username is required', email: 'Invalid email', password: 'Password is required' };
@@ -59,7 +59,7 @@ describe('Sign up', () => {
 
         expect(screen.getByText(/Invalid email/i)).toBeInTheDocument();
         expect(screen.getByText(/Password is required/i)).toBeInTheDocument();
-    })
+    });
 
     test('should call setLogin when SignIn button is clicked', () => {
         render(<SignUp formState={formState} handlerChange={mockHandlerChange} handleSubmit={mockHandleSubmit} setLogin={mockSetLogin} />);
@@ -68,4 +68,4 @@ describe('Sign up', () => {
 
         expect(mockSetLogin).toHaveBeenCalled();
     });
-})
+});
