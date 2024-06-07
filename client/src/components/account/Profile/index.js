@@ -248,15 +248,13 @@ const Profile = ({data, numberOfFilms}) => {
                                 <DeleteIcon sx={{fill: theme.palette.text.primary}}/>
                                 <Typography sx={{color: theme.palette.text.primary}}>Delete account</Typography>
                             </Button>
-                            <Link href={link}>
+                            <Link>
                                 <Button variant="contained" type="submit" size="large"
                                         onClick={onLogOutClick}>
                                     <LogoutIcon/>
                                     <Typography sx={{paddingLeft: '14px'}}>Log out</Typography>
                                 </Button>
-
                             </Link>
-
                         </Box>
                     </Box>
                 </Grid>
