@@ -4,6 +4,9 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {styled} from '@mui/material/styles';
+import {useState} from 'react';
+
+import {validateSignIn, isValid} from '../validation';
 
 const btnstyle={margin:'8px 0'};
 
@@ -22,9 +25,20 @@ const TextFieldBox = styled(Box)(({ theme }) => ({
 
 
 const SignIn = ({formState, handlerChange, handleSubmit, setLogin}) => {
+    const [errors, setErrors] = useState({ email: '', password: '' });
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const formValidation = validateSignIn(formState);
+        setErrors(formValidation);
+        if (isValid(formValidation)) {
+            handleSubmit(e);
+        }
+    };
+
     return(
         <>
-            <TextFieldBox component="form" onSubmit={handleSubmit}>
+            <TextFieldBox component="form" onSubmit={onSubmit}>
                 <TextField
                     sx={{mb: '16px'}}
                     label="Email"
@@ -35,6 +49,8 @@ const SignIn = ({formState, handlerChange, handleSubmit, setLogin}) => {
                     fullWidth required
                     value={formState.email}
                     onChange={handlerChange}
+                    error={!!errors.email}
+                    helperText={errors.email}
                 />
                 <TextField
                     label="Password"
@@ -45,6 +61,8 @@ const SignIn = ({formState, handlerChange, handleSubmit, setLogin}) => {
                     fullWidth required
                     value={formState.password}
                     onChange={handlerChange}
+                    error={!!errors.password}
+                    helperText={errors.password}
                 />
                 <FormControlLabel
                     control={<Checkbox name="checkedB" color="primary"/>}
