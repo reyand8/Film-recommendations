@@ -3,7 +3,7 @@ import {Fragment} from 'react';
 import {flatten} from 'flat';
 import PropTypes from 'prop-types';
 
-import {LOCALES} from '../../const';
+import {LOCALES} from '../../common/const';
 import messages from '../../messages';
 
 const Provider = ({children, locale = LOCALES.ENGLISH}) => (

@@ -1,6 +1,6 @@
 import {useState, useCallback} from 'react';
 
-import {MAX_SELECTED_FILMS, STORAGE_SELECTED_FILMS_KEY} from '../../const';
+import {MAX_SELECTED_FILMS, STORAGE_SELECTED_FILMS_KEY} from '../../common/const';
 import {deleteIdsFromStorage, saveIdsToStorage} from '../../utils/localStorage';
 
 
