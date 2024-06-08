@@ -27,12 +27,24 @@ const TextFieldBox = styled(Box)(({ theme }) => ({
 const SignIn = ({formState, handlerChange, handleSubmit, setLogin}) => {
     const [errors, setErrors] = useState({ email: '', password: '' });
 
-    const onSubmit = (e) => {
+    const handleApolloServerError = (error) => {
+        if (error.message.includes('Invalid email or password')) {
+            setErrors(prev => ({ ...prev, general: 'Invalid email or password' }));
+        } else {
+            setErrors(prev => ({ ...prev, general: 'An unexpected error occurred' }));
+        }
+    };
+
+    const onSubmit = async(e) => {
         e.preventDefault();
         const formValidation = validateSignIn(formState);
         setErrors(formValidation);
         if (isValid(formValidation)) {
-            handleSubmit(e);
+            try {
+                await handleSubmit(e);
+            } catch (error) {
+                handleApolloServerError(error);
+            }
         }
     };
 

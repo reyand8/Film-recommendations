@@ -26,12 +26,26 @@ const SignUp = ({formState, handlerChange, handleSubmit, setLogin}) => {
 
     const [errors, setErrors] = useState({ username: '', email: '', password: '' });
 
-    const onSubmit = (e) => {
+    const handleApolloServerError = (error) => {
+        if (error.message.includes('Unique constraint failed on the fields: (`email`)')) {
+            setErrors(prev => ({ ...prev, email: 'This email is already exists' }));
+        } else if (error.message.includes('Unique constraint failed on the fields: (`username`)')) {
+            setErrors(prev => ({ ...prev, username: 'This username is already exists' }));
+        } else {
+            setErrors(prev => ({ ...prev, general: 'An unexpected error occurred' }));
+        }
+    };
+
+    const onSubmit = async(e) => {
         e.preventDefault();
         const formValidation = validateSignUp(formState);
         setErrors(formValidation);
         if (isValid(formValidation)) {
-            handleSubmit(e);
+            try {
+                await handleSubmit(e);
+            } catch (error) {
+                handleApolloServerError(error);
+            }
         }
     };
 
