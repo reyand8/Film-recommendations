@@ -5,6 +5,7 @@ import SingleFilm from './SingleFilm';
 import FilmsByGenre from './FilmsByGenre';
 import Search from './Search';
 import Genres from './Genres';
+import NotFound from './NotFound';
 
 export {
     Home,
@@ -14,4 +15,5 @@ export {
     FilmsByGenre,
     Search,
     Genres,
+    NotFound,
 };

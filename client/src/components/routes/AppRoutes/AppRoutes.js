@@ -3,7 +3,7 @@ import {Route, Routes} from 'react-router-dom';
 import {ROUTES} from '../../../routes';
 import {
         Home, Recommend, SingleFilm, Genres,
-        FilmsByGenre, Search, Account,
+        FilmsByGenre, Search, Account, NotFound,
 } from '../../../pages';
 
 
@@ -16,6 +16,7 @@ const AppRoutes = () => (
         <Route path={ROUTES.SEARCH} element={<Search />} />
         <Route path={ROUTES.RECOMMEND} element={<Recommend />} />
         <Route path={ROUTES.ACCOUNT} element={<Account />} />
+        <Route path="*" element={<NotFound />} />
     </Routes>
 );
 
