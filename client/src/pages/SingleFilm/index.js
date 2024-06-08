@@ -6,13 +6,12 @@ import {Box, Grid} from '@mui/material';
 import DataError from '../../components/status/DataError';
 import Loading from '../../components/status/Loading';
 import CardSingleFilm from '../../components/card/CardSingleFilm';
-import {FILMS_BY_ID_QUERY} from '../../gqlClient/quieries/queries';
+import {FILM_DETAILS_QUERY} from '../../gqlClient/quieries/queries';
 
 
 const SingleFilm = () => {
     const { id } = useParams();
-
-    const {loading, error, data} = useQuery(FILMS_BY_ID_QUERY, {
+    const {loading, error, data} = useQuery(FILM_DETAILS_QUERY, {
         variables: {
             ids: +id,
         },
@@ -40,6 +39,3 @@ const SingleFilm = () => {
 };
 
 export default SingleFilm;
-
-
-
