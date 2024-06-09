@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react';
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {FormattedMessage} from 'react-intl';
 import {useQuery} from '@apollo/client';
@@ -90,11 +90,24 @@ const Navigation = () => {
     const [isDrawerOpen, setDrawerOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-
+    const searchResultRef = useRef(null);
     const { state, dispatch } = useContext(AppContext);
 
     const [searchValue, setSearchValue] = useState('');
     const [page, setPage] = useState(1);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (searchResultRef.current && !searchResultRef.current.contains(event.target)) {
+                setSearchValue('');
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [searchResultRef]);
 
     const search = {
         page: page,
@@ -258,7 +271,7 @@ const Navigation = () => {
                                     />
                                 </Search>
                                 {searchValue && (
-                                    <SearchResultBox className="box" sx={{boxShadow: 3}}>
+                                    <SearchResultBox ref={searchResultRef}  className="box" sx={{boxShadow: 3}}>
                                         {loading ? <Loading/> : !data?.filmsBySearchQuery.totalResults ?
                                             <Typography variant="subtitel2" sx={{color: theme.palette.text.primary}}>
                                                 No results
