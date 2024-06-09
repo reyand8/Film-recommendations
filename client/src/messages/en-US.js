@@ -43,5 +43,22 @@ export default {
             release_date: 'Release date',
             genres: 'Genres',
         },
+        auth: {
+            sign_in: 'Sign In',
+            sign_up: 'Sign Up',
+            remember_me: 'Remember me',
+            auth_question: 'Do you have an account?',
+            forgot_password: 'Forgot password?',
+        },
+        profile: {
+            profile: 'Profile',
+            edit_profile: 'Edit Profile',
+            edit: 'Edit',
+            add_profile_image: 'Add Profile Image',
+            selected_films: 'Selected Films',
+            open_selected_films: 'Open Selected Films',
+            delete_account: 'Delete Account',
+            log_out: 'Log out',
+        },
     },
 };

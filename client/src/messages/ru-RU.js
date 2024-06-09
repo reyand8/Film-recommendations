@@ -43,5 +43,22 @@ export default {
             release_date: 'Дата выпуска',
             genres: 'Жанры',
         },
+        auth: {
+            sign_in: 'Войти',
+            sign_up: 'Зарегистрироваться',
+            remember_me: 'Запомнить меня',
+            auth_question: 'У вас есть аккаунт?',
+            forgot_password: 'Забыли пароль?',
+        },
+        profile: {
+            profile: 'Профиль',
+            edit_profile: 'Редактировать профиль',
+            edit: 'Редактировать',
+            add_profile_image: 'Добавить изображение профиля',
+            selected_films: 'Выбранные фильмы',
+            open_selected_films: 'Открыть выбранные фильмы',
+            delete_account: 'Удалить аккаунт',
+            log_out: 'Выйти',
+        },
     },
 };

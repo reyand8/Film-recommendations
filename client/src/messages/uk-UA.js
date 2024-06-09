@@ -43,5 +43,22 @@ export default {
             release_date: 'Дата випуску',
             genres: 'Жанри',
         },
+        auth: {
+            sign_in: 'Увійти',
+            sign_up: 'Зареєструватися',
+            remember_me: 'Запам`ятай мене',
+            auth_question: 'У вас є обліковий запис?',
+            forgot_password: 'Забули пароль?',
+        },
+        profile: {
+            profile: 'Профіль',
+            edit_profile: 'Редагувати профіль',
+            edit: 'Редагувати',
+            add_profile_image: 'Додати зображення профілю',
+            selected_films: 'Обрані фільми',
+            open_selected_films: 'Відкрити обрані фільми',
+            delete_account: 'Видалити обліковий запис',
+            log_out: 'Вийти',
+        },
     },
 };

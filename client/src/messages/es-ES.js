@@ -43,5 +43,22 @@ export default {
             release_date: 'Fecha de lanzamiento',
             genres: 'Géneros',
         },
+        auth: {
+            sign_in: 'Iniciar sesión',
+            sign_up: 'Registrarse',
+            remember_me: 'Recuérdame',
+            auth_question: '¿Tienes una cuenta?',
+            forgot_password: '¿Olvidaste tu contraseña?',
+        },
+        profile: {
+            profile: 'Perfil',
+            edit_profile: 'Editar perfil',
+            edit: 'Editar',
+            add_profile_image: 'Agregar imagen de perfil',
+            selected_films: 'Películas seleccionadas',
+            open_selected_films: 'Abrir películas seleccionadas',
+            delete_account: 'Eliminar cuenta',
+            log_out: 'Cerrar sesión',
+        },
     },
 };
