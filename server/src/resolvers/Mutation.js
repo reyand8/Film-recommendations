@@ -83,15 +83,11 @@ async function updateUser(parent, {email, username, selectedFilms}, context) {
 
 async function updateImage(parent, {file}, context) {
     try {
-        console.log(file)
         const userId = context.userId;
-
         if (!file) {
             throw new Error('No file provided');
         }
-        console.log(file)
         const {createReadStream, filename} = await file;
-        console.log(file)
         const stream = createReadStream();
         const filePath = path.join(__dirname, 'uploads', filename);
 
@@ -101,7 +97,6 @@ async function updateImage(parent, {file}, context) {
                 .on('finish', resolve)
                 .on('error', reject)
         );
-        console.log(filePath)
         return prisma.user.update({
             where: {id: userId},
             data: {image: filePath},
