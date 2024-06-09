@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import {styled} from '@mui/material/styles';
 import React, {useState} from 'react';
 import {validateSignUp, isValid} from '../validation';
+import {FormattedMessage} from 'react-intl';
 
 const btnstyle={margin:'8px 0'};
 
@@ -89,13 +90,13 @@ const SignUp = ({formState, handlerChange, handleSubmit, setLogin}) => {
                         color="primary"
                         variant="contained"
                         style={btnstyle} fullWidth>
-                    Sign Up
+                    <FormattedMessage id="auth.sign_up"/>
                 </Button>
             </TextFieldBox>
-            <Typography > Do you have an account ?
+            <Typography > <FormattedMessage id="auth.auth_question"/>
                 <Link>
                     <Button onClick={() => setLogin(prev => !prev)}>
-                        Sign In
+                        <FormattedMessage id="auth.sign_in"/>
                     </Button>
                 </Link>
             </Typography>

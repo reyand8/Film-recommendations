@@ -3,6 +3,7 @@ import Paper from '@mui/material/Paper';
 
 import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
+import {FormattedMessage} from 'react-intl';
 import {useMutation, useQuery} from '@apollo/client';
 
 import SignIn from '../../components/account/SignIn';
@@ -14,6 +15,7 @@ import {GET_USER} from '../../gqlClient/quieries/queries';
 import {SIGN_UP_MUTATION, SIGN_IN_MUTATION, UPDATE_USER} from '../../gqlClient/mutations/mutations';
 import {saveIdsToStorage} from '../../utils/localStorage';
 import {STORAGE_SELECTED_FILMS_KEY} from '../../common/const';
+
 
 const paperStyle={padding :20, minHeight:'42vh', maxWidth: 360, margin:'60px auto'};
 
@@ -101,7 +103,7 @@ const Account = () => {
                     selectedFilms: result },
             });
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     };
 
@@ -137,7 +139,7 @@ const Account = () => {
                     <Paper elevation={10} style={paperStyle}>
                         <Grid align="center">
                             <h2>
-                                {login ? 'Sign Up' : 'Login'}
+                                {login ? <FormattedMessage id="auth.sign_up"/> : <FormattedMessage id="auth.sign_in"/>}
                             </h2>
                         </Grid>
                         {login ? (

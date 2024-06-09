@@ -7,6 +7,7 @@ import {styled} from '@mui/material/styles';
 import React, {useState} from 'react';
 
 import {validateSignIn, isValid} from '../validation';
+import {FormattedMessage} from 'react-intl';
 
 const btnstyle={margin:'8px 0'};
 
@@ -78,7 +79,7 @@ const SignIn = ({formState, handlerChange, handleSubmit, setLogin}) => {
                 />
                 <FormControlLabel
                     control={<Checkbox name="checkedB" color="primary"/>}
-                    label="Remember me"
+                    label={<FormattedMessage id="auth.remember_me"/>}
                 />
                 <Button
                     type="submit"
@@ -86,17 +87,17 @@ const SignIn = ({formState, handlerChange, handleSubmit, setLogin}) => {
                     variant="contained"
                     style={btnstyle}
                     fullWidth>
-                    Sign In
+                    <FormattedMessage id="auth.sign_in"/>
                 </Button>
                 <Typography sx={{marginY: '12px'}}>
                     <Link href="#" >
-                        Forgot password ?
+                        <FormattedMessage id="auth.forgot_password"/>
                     </Link>
                 </Typography>
             </TextFieldBox>
             <Typography>
                 <Button onClick={() => setLogin(prev => !prev)}>
-                    Registration
+                    <FormattedMessage id="auth.sign_up"/>
                 </Button>
             </Typography>
         </>

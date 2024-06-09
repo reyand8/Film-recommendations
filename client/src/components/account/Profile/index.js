@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import {FormattedMessage} from 'react-intl';
 import Dropzone from 'react-dropzone';
 import {useNavigate} from 'react-router-dom';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useMutation} from '@apollo/client';
 
 import defaultImage from '../../../assets/img/default-image.png';
@@ -89,7 +89,7 @@ const Profile = ({data, numberOfFilms}) => {
                         username: editForm.username },
             });
         } catch(error) {
-            console.log(error);
+            console.error(error);
         }
     };
 
@@ -112,7 +112,7 @@ const Profile = ({data, numberOfFilms}) => {
             {openConfirm ? <ConfirmDelete handleDeleteAccount={handleDeleteAccount} setOpenConfirm={setOpenConfirm}/> : (
             <Paper elevation={10} style={profileStyle}>
                 <Grid align="center">
-                    <h2>Profile</h2>
+                    <h2><FormattedMessage id="profile.profile"/></h2>
                     <Box sx={{display: 'flex', flexDirection: 'column'}}>
                         <Box>
                             {!data.user.image ? <img src={defaultImage} alt="defaultImage"/> :
@@ -133,7 +133,7 @@ const Profile = ({data, numberOfFilms}) => {
                                                 <EditIcon sx={{fill: '#858584'}}/>
                                             </Box>
                                             <Box sx={{marginLeft: '10px'}}>
-                                                Edit Profile
+                                                <FormattedMessage id="profile.edit_profile"/>
                                             </Box>
                                         </Box>
                                     </AccordionSummary>
@@ -169,7 +169,7 @@ const Profile = ({data, numberOfFilms}) => {
                                             <Box>
                                                 <Button variant="contained" type="submit" size="large"
                                                         sx={{marginTop: '16px'}}>
-                                                    <FormattedMessage id="filters.submit"/>
+                                                    <FormattedMessage id="profile.edit"/>
                                                 </Button>
                                             </Box>
                                         </Box>
@@ -177,7 +177,7 @@ const Profile = ({data, numberOfFilms}) => {
                                     <Box>
                                         <Box sx={{ height: '240px'}}>
                                             <Typography>
-                                                Add Profile Image
+                                                <FormattedMessage id="profile.add_profile_image"/>
                                             </Typography>
                                             <Box
                                                 component="form"
@@ -217,14 +217,14 @@ const Profile = ({data, numberOfFilms}) => {
                                                 <MovieIcon sx={{fill: '#858584'}}/>
                                             </Box>
                                             <Box sx={{marginLeft: '10px'}}>
-                                                Selected films
+                                                <FormattedMessage id="profile.selected_films"/>
                                             </Box>
                                         </Box>
                                     </AccordionSummary>
                                     <AccordionDetails sx={{ height: '240px', display: 'flex', flexDirection: 'column'}}
                                     >
                                         <Typography sx={{fontSize: '20px'}}>
-                                            There are {numberOfFilms.length} films
+                                            {numberOfFilms.length} <FormattedMessage id="profile.selected_films"/>
                                         </Typography>
 
                                         <Link href={link} onClick={(event) => {
@@ -233,10 +233,11 @@ const Profile = ({data, numberOfFilms}) => {
                                             }}} passHref>
                                             <Button disabled={numberOfFilms.length <= 0} sx={{ background: theme.palette.primary.light}}
                                                     variant="contained" size="large">
-                                                <Typography>Open selected films</Typography>
+                                                <Typography>
+                                                    <FormattedMessage id="profile.open_selected_films"/>
+                                                </Typography>
                                             </Button>
                                         </Link>
-
                                     </AccordionDetails>
                                 </Accordion>
                             </Box>
@@ -246,13 +247,17 @@ const Profile = ({data, numberOfFilms}) => {
                                     sx={{ background: theme.palette.primary.contrastText}}
                                     onClick={() => setOpenConfirm(true)}>
                                 <DeleteIcon sx={{fill: theme.palette.text.primary}}/>
-                                <Typography sx={{color: theme.palette.text.primary}}>Delete account</Typography>
+                                <Typography sx={{color: theme.palette.text.primary}}>
+                                    <FormattedMessage id="profile.delete_account"/>
+                                </Typography>
                             </Button>
                             <Link>
                                 <Button variant="contained" type="submit" size="large"
                                         onClick={onLogOutClick}>
                                     <LogoutIcon/>
-                                    <Typography sx={{paddingLeft: '14px'}}>Log out</Typography>
+                                    <Typography sx={{paddingLeft: '14px'}}>
+                                        <FormattedMessage id="profile.log_out"/>
+                                    </Typography>
                                 </Button>
                             </Link>
                         </Box>
