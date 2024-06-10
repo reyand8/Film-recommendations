@@ -1,13 +1,22 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import {isValid, validateSignUp} from '../validation';
 import SignUp from './index';
+import { isValid, validateSignUp } from '../validation';
 
 jest.mock('../validation', () => ({
     validateSignUp: jest.fn(),
     isValid: jest.fn(),
 }));
+
+const messages = {
+    'auth.sign_in': 'Sign In',
+    'auth.sign_up': 'Sign Up',
+    'auth.auth_question': 'Do you have an account?',
+    'auth.remember_me': 'Remember me',
+    'auth.forgot_password': 'Forgot password',
+};
 
 const mockHandleSubmit = jest.fn();
 const mockSetLogin = jest.fn();
@@ -24,8 +33,22 @@ describe('Sign up', () => {
         mockHandlerChange.mockClear();
     });
 
+    const renderWithIntl = (component) => {
+        return render(
+            <IntlProvider locale="en-us" messages={messages}>
+                {component}
+            </IntlProvider>
+        );
+    };
+
     test('should render SignUp', () => {
-        render(<SignUp formState={formState} handlerChange={mockHandlerChange} handleSubmit={mockHandleSubmit} setLogin={mockSetLogin} />);
+        renderWithIntl(
+            <SignUp formState={formState}
+                    handlerChange={mockHandlerChange}
+                    handleSubmit={mockHandleSubmit}
+                    setLogin={mockSetLogin}
+            />
+        );
 
         expect(screen.getByLabelText(/Username/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
@@ -34,9 +57,15 @@ describe('Sign up', () => {
     });
 
     test('should submit valid form', () => {
-        validateSignUp.mockReturnValue({ username: '', email: '', password: ''});
+        validateSignUp.mockReturnValue({ username: '', email: '', password: '' });
         isValid.mockReturnValue(true);
-        render(<SignUp formState={formState} handlerChange={mockHandlerChange} handleSubmit={mockHandleSubmit} setLogin={mockSetLogin} />);
+        renderWithIntl(
+            <SignUp formState={formState}
+                    handlerChange={mockHandlerChange}
+                    handleSubmit={mockHandleSubmit}
+                    setLogin={mockSetLogin}
+            />
+        );
 
         fireEvent.change(screen.getByLabelText(/Username/i), { target: { value: 'mytest' } });
         fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'test@test.com' } });
@@ -49,11 +78,22 @@ describe('Sign up', () => {
     });
 
     test('should return errors', () => {
-        const errors = { username: 'Username is required', email: 'Invalid email', password: 'Password is required' };
+        const errors = {
+            username: 'Username is required',
+            email: 'Invalid email',
+            password: 'Password is required',
+        };
+
         validateSignUp.mockReturnValue(errors);
         isValid.mockReturnValue(false);
 
-        render(<SignUp formState={formState} handlerChange={mockHandlerChange} handleSubmit={mockHandleSubmit} setLogin={mockSetLogin} />);
+        renderWithIntl(
+            <SignUp formState={formState}
+                    handlerChange={mockHandlerChange}
+                    handleSubmit={mockHandleSubmit}
+                    setLogin={mockSetLogin}
+            />
+        );
 
         fireEvent.submit(screen.getByRole('button', { name: /Sign Up/i }));
 
@@ -62,7 +102,12 @@ describe('Sign up', () => {
     });
 
     test('should call setLogin when SignIn button is clicked', () => {
-        render(<SignUp formState={formState} handlerChange={mockHandlerChange} handleSubmit={mockHandleSubmit} setLogin={mockSetLogin} />);
+        renderWithIntl(
+            <SignUp formState={formState}
+                    handlerChange={mockHandlerChange}
+                    handleSubmit={mockHandleSubmit}
+                    setLogin={mockSetLogin} />
+        );
 
         fireEvent.click(screen.getByRole('button', { name: /Sign In/i }));
 
