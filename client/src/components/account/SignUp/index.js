@@ -88,6 +88,7 @@ const SignUp = ({formState, handlerChange, handleSubmit, setLogin}) => {
                 <Button sx={{mb: '8px'}}
                         type="submit"
                         color="primary"
+                        name="Sign Up"
                         variant="contained"
                         style={btnstyle} fullWidth>
                     <FormattedMessage id="auth.sign_up"/>
@@ -95,7 +96,7 @@ const SignUp = ({formState, handlerChange, handleSubmit, setLogin}) => {
             </TextFieldBox>
             <Typography > <FormattedMessage id="auth.auth_question"/>
                 <Link>
-                    <Button onClick={() => setLogin(prev => !prev)}>
+                    <Button name="Sign In" onClick={() => setLogin(prev => !prev)}>
                         <FormattedMessage id="auth.sign_in"/>
                     </Button>
                 </Link>
