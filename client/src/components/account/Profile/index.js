@@ -1,5 +1,9 @@
-import {Accordion, AccordionDetails, AccordionSummary, Box, Grid, Link, TextField} from '@mui/material';
+import React, {useEffect, useState} from 'react';
+import {FormattedMessage} from 'react-intl';
+import Dropzone from 'react-dropzone';
+import {useNavigate} from 'react-router-dom';
 
+import {Accordion, AccordionDetails, AccordionSummary, Box, Grid, Link, TextField} from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -9,10 +13,6 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import {FormattedMessage} from 'react-intl';
-import Dropzone from 'react-dropzone';
-import {useNavigate} from 'react-router-dom';
-import React, {useEffect, useState} from 'react';
 import {useMutation} from '@apollo/client';
 
 import defaultImage from '../../../assets/img/default-image.png';
@@ -151,7 +151,7 @@ const Profile = ({data, numberOfFilms}) => {
                                             <TextField
                                                 id="standard-basic"
                                                 label="Email"
-                                                name="email"
+                                                name="Email"
                                                 value={editForm.email}
                                                 variant="standard"
                                                 onChange={handleChange}
@@ -160,14 +160,14 @@ const Profile = ({data, numberOfFilms}) => {
                                             <TextField
                                                 id="standard-basic"
                                                 label="Username"
-                                                name="username"
+                                                name="Username"
                                                 value={editForm.username}
                                                 variant="standard"
                                                 onChange={handleChange}
                                                 sx={{mx: '20px'}}
                                             />
                                             <Box>
-                                                <Button variant="contained" type="submit" size="large"
+                                                <Button name="Edit" variant="contained" type="submit" size="large"
                                                         sx={{marginTop: '16px'}}>
                                                     <FormattedMessage id="profile.edit"/>
                                                 </Button>
@@ -230,7 +230,7 @@ const Profile = ({data, numberOfFilms}) => {
                                         <Link href={link} onClick={(event) => {
                                             if (numberOfFilms.length <= 0) {
                                                 event.preventDefault();
-                                            }}} passHref>
+                                            }}} passhref={link.toString()}>
                                             <Button disabled={numberOfFilms.length <= 0} sx={{ background: theme.palette.primary.light}}
                                                     variant="contained" size="large">
                                                 <Typography>
@@ -243,7 +243,7 @@ const Profile = ({data, numberOfFilms}) => {
                             </Box>
                         </Box>
                         <Box sx={{marginTop: '98px', display: 'flex', justifyContent: 'space-between'}}>
-                            <Button variant="contained" type="submit" size="large"
+                            <Button variant="contained" type="submit" size="large" name="Delete Account"
                                     sx={{ background: theme.palette.primary.contrastText}}
                                     onClick={() => setOpenConfirm(true)}>
                                 <DeleteIcon sx={{fill: theme.palette.text.primary}}/>
@@ -252,7 +252,7 @@ const Profile = ({data, numberOfFilms}) => {
                                 </Typography>
                             </Button>
                             <Link>
-                                <Button variant="contained" type="submit" size="large"
+                                <Button variant="contained" type="submit" size="large" name="Log Out"
                                         onClick={onLogOutClick}>
                                     <LogoutIcon/>
                                     <Typography sx={{paddingLeft: '14px'}}>
