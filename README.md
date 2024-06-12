@@ -8,11 +8,10 @@
 4. [Examples](#Examples)
     1. [Main page](#Main-page)
     2. [Single item](#Film-details)
-    3. [Single category with filter](#Single-category-with-filter)
-    4. [Search bar](#Search-bar)
-    5. [Wishlist and basket](#Wishlist-and-basket)
-    6. [Recommendations](#Recommendations)
-    7. [User Authentication and Profile](#User-Authentication-and-Profile)
+    3. [Selected films](#Selected-films)
+    4. [Genres](#Genres)
+    5. [Search bar](#Search-bar)
+    6. [User Authentication and Profile](#User-Authentication-and-Profile)
 
 
 ____
