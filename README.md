@@ -18,7 +18,6 @@
 ____
 
 ## 📜 Main Information
-
 ____
 
 ## Stack
@@ -84,6 +83,8 @@ The project consists of two parts: the server and the client.
 * Server
   - Navigate to the server directory: cd server
   - Install dependencies: npm install
+  - Generate your API key on https://api.themoviedb.org 
+  and add your key to the config file
   - Run the server: npm run server  
   - Server will run on http://localhost:4000/graphql
   
