@@ -41,13 +41,13 @@ const server = new ApolloServer({
 
 const app = express();
 
-// Middleware для обработки загрузки файлов
+
 app.use(graphqlUploadExpress({ maxFileSize: 15000000, maxFiles: 1 }));
 
-// Middleware CORS
+
 app.use(cors({ origin: 'http://localhost:3000' }));
 
-// Middleware для раздачи статических файлов
+
 const imageDir = path.join(__dirname, 'uploads');
 app.use('/uploads', express.static(imageDir));
 
