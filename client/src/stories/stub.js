@@ -2,7 +2,7 @@ export const films = [
     {
         '_id': '6276dd44802ec200dafc8dbb',
         'image': 'https://www.themoviedb.org/t/p/w440_and_h660_face/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg',
-        'releaseDate': '2024-04-13T12:38:32 -03:00',
+        'releaseDate': '2024-01-01',
         'title': 'Poshome',
         'genres': [
             {
@@ -15,6 +15,8 @@ export const films = [
             },
         ],
         'runtime': 123,
+        'adult': true,
+        'voteAverage': 8.5,
     },
     {
         '_id': '6226dd442e753f3bd3436598',
